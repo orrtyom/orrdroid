@@ -11,6 +11,7 @@
 - [Синхронизация через Tailnet: главное и ведомые устройства](docs/orrdroid/SYNC.md)
 - [Проверки и критерии выпуска](docs/orrdroid/VALIDATION.md)
 - [Изоляция TUN и аудит существующих защит Keqdroid](docs/orrdroid/SECURITY_ISOLATION.md)
+- [Разбор backup и RKNHardering от 11 ноября](docs/orrdroid/SCAN_2026-11-11.md)
 - [Исходное техническое задание](docs/orrdroid/REQUIREMENTS.md)
 - [Источники и границы выводов](docs/orrdroid/SOURCES.md)
 
