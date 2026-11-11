@@ -10,6 +10,7 @@
 - [Предложение по улучшению оригинального Keqdroid](docs/orrdroid/UPSTREAM_PROPOSAL.md)
 - [Синхронизация: два режима, Tailnet, LAN и хранилища](docs/orrdroid/SYNC.md)
 - [SOCKS5/HTTP для локальной сети, ссылка и QR](docs/orrdroid/LAN_PROXY.md)
+- [Адреса проверок и сервисные профили](docs/orrdroid/PROBE_PROFILES.md)
 - [Проверки и критерии выпуска](docs/orrdroid/VALIDATION.md)
 - [Изоляция TUN и аудит существующих защит Keqdroid](docs/orrdroid/SECURITY_ISOLATION.md)
 - [Сравнение актуальных backup Keqdroid, Karing и Farvater](docs/orrdroid/BACKUP_COMPARISON_2026-11-11.md)
