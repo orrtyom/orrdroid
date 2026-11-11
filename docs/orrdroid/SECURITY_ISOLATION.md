@@ -86,3 +86,7 @@ R1 переносится в M0–M1: аудит и воспроизведени
 - Патчи Keqdroid: [Xray owner](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/tool/patches/xray-android-uid-owner.patch), [mihomo guard](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/tool/patches/mihomo-uid-owner-guard.patch), [handshake](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/tool/patches/mihomo-uid-owner-handshake.patch), [DNS](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/tool/patches/mihomo-uid-owner-hijack-addresses.patch), [sing-tun](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/tool/patches/sing-tun-reject-before-handshake.patch).
 
 Сравнительный рейтинг GrapheneOS/CalyxOS, все даты их обновлений и утверждения о каждом стороннем клиенте из вложения здесь не перепроверялись и не приняты как требования продукта. Приватные IP из исходного скана в репозиторий не переносятся.
+
+## 7. Разрешённый LAN-прокси
+
+Дополнение 0.4: [LAN_PROXY.md](LAN_PROXY.md) разрешает только явно включённый, аутентифицированный LAN inbound. Его нельзя путать с обходом через чужой TUN. Проверить отказ SOCKS no-auth и HTTP/CONNECT без credentials, недоступность control API, IPv6, смену сети и отсутствие direct fallback. Синхронизация не включает раздачу и не меняет её локальный пароль. Защита TUN продолжает действовать независимо от LAN listener.
