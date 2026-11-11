@@ -2,7 +2,7 @@
 
 Основа: техническое задание пользователя, уточнения в текущем чате и чтение открытых исходников. Ни один проект не был установлен или испытан на устройстве пользователя при подготовке плана. Оценки трудозатрат, пороги и архитектура Orrdroid — предложения, а не свойства существующих приложений.
 
-## Keqdroid: проверенная база v0.36.0
+## Keqdroid: исходное исследование v0.36.0, база импорта v0.36.1
 
 - **S1.** [Релиз v0.36.0](https://github.com/Lemonochka/keqdroid/releases/tag/v0.36.0), commit `f8865fb9144f570931f477c15b57e30928882205`. Источник сведений об уже заявленных изменениях безопасности, DNS и правил.
 - **S2.** [auto_server_select.dart](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/lib/services/auto_server_select.dart) и [auto_select_watchdog.dart](https://github.com/Lemonochka/keqdroid/blob/v0.36.0/lib/services/auto_select_watchdog.dart). Область подписки, соседи, история, удержание и ограничения переходов.
@@ -47,3 +47,10 @@ README-AMNEZIA внутри тега содержит устаревшую фр�
 ## Дополнение 0.2: изоляция TUN
 
 Получен материал пользователя «Изоляция VPN на Android: CalyxOS, GrapheneOS и утечка через tun0» от 17.10.2026. Проверенные первичные источники, существующие патчи Keqdroid и границы выводов собраны в [SECURITY_ISOLATION.md](SECURITY_ISOLATION.md). Выводы о полноте защиты остаются задачей испытаний; исходный скан с адресами не публикуется.
+
+
+## Дополнение 0.3: Keqdroid v0.36.1
+
+**S18.** [Релиз v0.36.1](https://github.com/Lemonochka/keqdroid/releases/tag/v0.36.1), commit `eca4c926f096731fec3f6746c15625c53b1c6573`, опубликован 11.11.2026 в 04:41 МСК. [Сравнение с v0.36.0](https://github.com/Lemonochka/keqdroid/compare/v0.36.0...v0.36.1): 6 коммитов, 45 файлов. Изменения: ручной порядок маршрутов всех приложений, соответствующая генерация правил/DNS; установщик Windows и его обновление/удаление; права Linux-пакетов.
+
+Проверены diff `traffic_route.dart`, `routes_provider.dart`, `traffic_routes.dart`, `app_routes.dart`, `route_servers.dart`, генераторов Xray/mihomo, `xray_core_settings.dart` и `package_linux.sh`. Механизмы Auto/пинга и owner-патчи в сравнении не меняются. Ссылки на v0.36.0 выше сохраняются как след исходного аудита, а не указание старой базы для импорта. Сетевые и установочные тесты новой версии здесь не запускались.
