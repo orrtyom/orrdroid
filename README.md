@@ -10,6 +10,7 @@
 - [Предложение по улучшению оригинального Keqdroid](docs/orrdroid/UPSTREAM_PROPOSAL.md)
 - [Синхронизация через Tailnet: главное и ведомые устройства](docs/orrdroid/SYNC.md)
 - [Проверки и критерии выпуска](docs/orrdroid/VALIDATION.md)
+- [Изоляция TUN и аудит существующих защит Keqdroid](docs/orrdroid/SECURITY_ISOLATION.md)
 - [Исходное техническое задание](docs/orrdroid/REQUIREMENTS.md)
 - [Источники и границы выводов](docs/orrdroid/SOURCES.md)
 
