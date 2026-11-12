@@ -44,7 +44,7 @@
 
 - [План и архитектура](docs/orrdroid/PLAN.md)
 - [Требования и уточнения](docs/orrdroid/REQUIREMENTS.md)
-- [Черновик issue для автора Keqdroid](docs/orrdroid/UPSTREAM_PROPOSAL.md)
+- [Черновик issue для автора Keqdroid — полное ТЗ](docs/orrdroid/UPSTREAM_PROPOSAL.md)
 - [Проверки и критерии выпуска](docs/orrdroid/VALIDATION.md)
 - [Адреса проверок и будущие сервисные профили](docs/orrdroid/PROBE_PROFILES.md)
 - [LAN SOCKS5/HTTP, ссылка и QR](docs/orrdroid/LAN_PROXY.md)
@@ -55,7 +55,7 @@
 - [Исторический обзор issues](docs/orrdroid/ISSUES_REVIEW_2026-11-11.md)
 - [Источники](docs/orrdroid/SOURCES.md) и [история документации](docs/orrdroid/CHANGELOG.md)
 
-Черновик issue сохранён для самостоятельной отправки владельцем проекта. Разработчику Keqdroid он не отправлялся.
+Черновик issue охватывает полное ТЗ, включая последующие этапы, и сохранён для самостоятельной отправки владельцем проекта. Разработчику Keqdroid он не отправлялся.
 
 ## Происхождение проекта
 
