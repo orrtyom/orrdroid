@@ -1,0 +1,3047 @@
+{
+  "revision": 1,
+  "date": "2026-11-12",
+  "status": "proposed_not_implemented",
+  "lucid_document_id": "12e814b0-d19e-4156-b50b-bf18481a5fc8",
+  "lucid_edit_url": "https://lucid.app/lucidchart/12e814b0-d19e-4156-b50b-bf18481a5fc8/edit",
+  "page_id": "orrdroid_flow",
+  "spec_base_sha": "2d6b2695091514219a0d4edeabfc8aa5938b8cc4",
+  "nodes": [
+    {
+      "g": "life",
+      "id": "start",
+      "row": 0,
+      "col": 0,
+      "type": "terminator",
+      "title": "Запуск / возврат в приложение",
+      "body": "Также: команда «Подключить»",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "service",
+      "row": 1,
+      "col": 0,
+      "type": "decision",
+      "title": "Сервис уже работает?",
+      "body": "Сверить реальное состояние",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "intent",
+      "row": 2,
+      "col": 0,
+      "type": "decision",
+      "title": "Нужно подключение?",
+      "body": "Команда или разрешённая автополитика",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "stopped",
+      "row": 2,
+      "col": 1,
+      "type": "terminator",
+      "title": "Остановлено пользователем",
+      "body": "Автоматика не поднимает туннель",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "config",
+      "row": 3,
+      "col": 0,
+      "type": "decision",
+      "title": "Есть пригодная конфигурация?",
+      "body": "Первый запуск: обычно нет",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "import",
+      "row": 3,
+      "col": 1,
+      "type": "process",
+      "title": "Добавить конфигурацию",
+      "body": "Подписка / файл / защищённая синхронизация",
+      "note": "URL подписки обновляется через доступный разрешённый bootstrap-путь. Если его нет — локальный импорт или восстановление сети. Нет бесконечного цикла ожидания прокси, который ещё не создан."
+    },
+    {
+      "g": "life",
+      "id": "sync",
+      "row": 4,
+      "col": 1,
+      "type": "decision",
+      "title": "Режим синхронизации?",
+      "body": "Tailnet / LAN / backup / сервис",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "master",
+      "row": 5,
+      "col": 0,
+      "type": "process",
+      "title": "Главное → ведомые",
+      "body": "Главное нельзя перезаписать с ведомого",
+      "note": "Режим, роли и новая эпоха меняются владельцем явно. Сопряжение, подпись и шифрование обязательны."
+    },
+    {
+      "g": "life",
+      "id": "merge",
+      "row": 5,
+      "col": 1,
+      "type": "process",
+      "title": "Изменения всех устройств",
+      "body": "Версии полей, конфликты, удаления",
+      "note": "Не просто время изменения целого файла. Стабильные ID, причинный порядок, tombstones и очередь офлайн-правок. WebDAV/Nextcloud — отдельные адаптеры."
+    },
+    {
+      "g": "life",
+      "id": "validate",
+      "row": 6,
+      "col": 0,
+      "type": "process",
+      "title": "Проверить и применить настройки",
+      "body": "Dry run, миграции, атомарность, откат",
+      "note": "Обмениваемся настройками и подписками, но не локальными пингами, сетевым состоянием и активным узлом. Полученные настройки не включают LAN-listener автоматически."
+    },
+    {
+      "g": "life",
+      "id": "vpn",
+      "row": 7,
+      "col": 0,
+      "type": "decision",
+      "title": "Разрешение VPN получено?",
+      "body": "И конфигурация поддерживается",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "awaituser",
+      "row": 7,
+      "col": 1,
+      "type": "terminator",
+      "title": "Нужно действие пользователя",
+      "body": "Разрешение / исправление / импорт",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "network",
+      "row": 8,
+      "col": 0,
+      "type": "process",
+      "title": "Привязаться к физической сети",
+      "body": "Новая эпоха: отменить старые проверки",
+      "note": "Wi-Fi / мобильная сеть / восстановление после сна. Результаты другой сети не разрешают переключение."
+    },
+    {
+      "g": "life",
+      "id": "online",
+      "row": 9,
+      "col": 0,
+      "type": "decision",
+      "title": "Есть сеть без portal?",
+      "body": "Нет связи / portal / доступна",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "waitnet",
+      "row": 9,
+      "col": 1,
+      "type": "process",
+      "title": "Ожидать доступную сеть",
+      "body": "Backoff; не штрафовать все узлы",
+      "note": "Captive portal требует явного входа. Проверки сети соблюдают запрет direct; при недостатке сведений состояние UNKNOWN."
+    },
+    {
+      "g": "life",
+      "id": "netpolicy",
+      "row": 10,
+      "col": 0,
+      "type": "decision",
+      "title": "Режим задан вручную?",
+      "body": "БС / ЧС либо Авто",
+      "note": ""
+    },
+    {
+      "g": "life",
+      "id": "detect",
+      "row": 10,
+      "col": 1,
+      "type": "process",
+      "title": "Определить режим напрямую",
+      "body": "Несколько целей, debounce, подтверждение",
+      "note": "Только через выбранную физическую сеть и при разрешённых direct-пробах. Успех VPN не классифицирует сеть. Неоднозначность → UNKNOWN; прежний режим лишь устаревшая подсказка."
+    },
+    {
+      "g": "life",
+      "id": "mode",
+      "row": 11,
+      "col": 0,
+      "type": "process",
+      "title": "Зафиксировать режим сети",
+      "body": "БС / ЧС / UNKNOWN + эпоха",
+      "note": "БС — гипотеза доступности, а не доказанная политика оператора. Метка провайдера не заменяет фактические проверки."
+    },
+    {
+      "g": "route",
+      "id": "rules",
+      "row": 0,
+      "col": 0,
+      "type": "decision",
+      "title": "Какой порядок правил?",
+      "body": "Совместимый или управляемый",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "compat",
+      "row": 1,
+      "col": 0,
+      "type": "process",
+      "title": "Сохранить порядок Keqdroid",
+      "body": "Включая пользовательское поле order",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "managed",
+      "row": 1,
+      "col": 1,
+      "type": "process",
+      "title": "Собрать явные приоритеты",
+      "body": "Ограничения → пользователь → провайдер",
+      "note": "Полный порядок: обязательные ограничения → пользовательские блокировки → специфичные правила приложений/сервисов → общие пользовательские → разрешённые правила провайдера → fallback."
+    },
+    {
+      "g": "route",
+      "id": "compile",
+      "row": 2,
+      "col": 0,
+      "type": "process",
+      "title": "Скомпилировать правила и DNS",
+      "body": "Overrides, hosts, стабильные ID",
+      "note": "Показать итоговый порядок и происхождение правил. При обновлении подписки не менять пользовательскую политику молча. Bootstrap DNS адреса прокси не зависит от ещё не поднятого прокси."
+    },
+    {
+      "g": "route",
+      "id": "scope",
+      "row": 3,
+      "col": 0,
+      "type": "decision",
+      "title": "Как устроен Auto?",
+      "body": "Один выход или отдельные группы",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "global",
+      "row": 4,
+      "col": 0,
+      "type": "process",
+      "title": "Базовый: один общий выход",
+      "body": "Proxy-правила → GlobalAuto → профиль",
+      "note": "В GlobalAuto пользователь выбирает общий либо TG+Instagram профиль. Direct и block продолжают действовать."
+    },
+    {
+      "g": "route",
+      "id": "pergroup",
+      "row": 4,
+      "col": 1,
+      "type": "process",
+      "title": "Расширенный: Auto по маршрутам",
+      "body": "Правило → группа → свой профиль",
+      "note": "TG+Instagram по умолчанию вместе; обычные сайты отдельно. Разные выходы одновременно только при поддержке графа outbound/проверенной композиции ядер."
+    },
+    {
+      "g": "route",
+      "id": "bindings",
+      "row": 5,
+      "col": 0,
+      "type": "decision",
+      "title": "Есть проверяемые пути?",
+      "body": "Сервер / Auto / цепочка / Tailnet",
+      "note": "Проверить совместимость ядра и всех обязательных маршрутов. Приложение не угадывает требования каждого сайта: действуют настроенные правила и профили."
+    },
+    {
+      "g": "route",
+      "id": "traffic",
+      "row": 6,
+      "col": 0,
+      "type": "process",
+      "title": "Принять новое соединение",
+      "body": "После активации таблицы маршрутов",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "ingress",
+      "row": 7,
+      "col": 0,
+      "type": "decision",
+      "title": "Какой вход?",
+      "body": "Android TUN или LAN-прокси",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "tun",
+      "row": 8,
+      "col": 0,
+      "type": "process",
+      "title": "Проверить владельца TUN",
+      "body": "Разрешён / запрещён / неизвестен",
+      "note": "Строгий режим: неизвестный UID/ошибка lookup не означает разрешение. DNS/IPv6/UDP/служебные исключения проверяются отдельно. Это проектируемый контракт, не доказанная защита текущего бинарника."
+    },
+    {
+      "g": "route",
+      "id": "lan",
+      "row": 8,
+      "col": 1,
+      "type": "process",
+      "title": "Проверить LAN-доступ",
+      "body": "Выбранный интерфейс + логин/пароль",
+      "note": "SOCKS5/HTTP включаются локально. Копирование ссылки и QR — для выбранного listener. Отдельный inbound tag; у удалённого клиента нет Android UID. Управляющие API и синхронизация не публикуются как прокси."
+    },
+    {
+      "g": "route",
+      "id": "access",
+      "row": 9,
+      "col": 0,
+      "type": "decision",
+      "title": "Вход разрешён?",
+      "body": "Политика TUN либо LAN-аутентификация",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "drop",
+      "row": 9,
+      "col": 1,
+      "type": "terminator",
+      "title": "Отклонить соединение",
+      "body": "Неавторизованный / запрещённый вход",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "match",
+      "row": 10,
+      "col": 0,
+      "type": "process",
+      "title": "Найти первое совпавшее правило",
+      "body": "UID / домен / IP / порт / протокол / режим",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "action",
+      "row": 11,
+      "col": 0,
+      "type": "decision",
+      "title": "Действие правила?",
+      "body": "BLOCK / DIRECT / выбранный путь",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "block",
+      "row": 12,
+      "col": 1,
+      "type": "terminator",
+      "title": "BLOCK: завершить запрос",
+      "body": "Пинг серверов не нужен",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "direct",
+      "row": 12,
+      "col": 0,
+      "type": "process",
+      "title": "DIRECT: физическая сеть",
+      "body": "DNS direct; без прокси-проверок",
+      "note": "Если direct не работает, не подменять действие другим маршрутом без явно заданной политики. Диагностика direct отделена от проверок узлов."
+    },
+    {
+      "g": "route",
+      "id": "bound",
+      "row": 13,
+      "col": 0,
+      "type": "decision",
+      "title": "Назначенный путь готов?",
+      "body": "Свежий допуск нужного профиля",
+      "note": ""
+    },
+    {
+      "g": "route",
+      "id": "forward",
+      "row": 14,
+      "col": 0,
+      "type": "process",
+      "title": "Передать данные по этому пути",
+      "body": "DNS согласован; нет direct fallback",
+      "note": "Для группы — закреплённый активный outbound, для цепочки — весь путь, для Tailnet — заданный peer/subnet/exit. Отказ конкретной группы не требует перезапуска всего VPN."
+    },
+    {
+      "g": "test",
+      "id": "kind",
+      "row": 0,
+      "col": 0,
+      "type": "decision",
+      "title": "Тип цели маршрута?",
+      "body": "Фиксированная / Auto / цепочка / Tailnet",
+      "note": ""
+    },
+    {
+      "g": "test",
+      "id": "fixed",
+      "row": 1,
+      "col": 0,
+      "type": "process",
+      "title": "Фиксированный сервер",
+      "body": "Не менять без явного fallback",
+      "note": ""
+    },
+    {
+      "g": "test",
+      "id": "auto",
+      "row": 1,
+      "col": 1,
+      "type": "process",
+      "title": "Auto: все разрешённые подписки",
+      "body": "Фильтры группы, страны, теги, режим",
+      "note": ""
+    },
+    {
+      "g": "test",
+      "id": "chain",
+      "row": 2,
+      "col": 0,
+      "type": "process",
+      "title": "Цепочка: выбрать полный путь",
+      "body": "Сервер→сервер / группа→группа",
+      "note": "Проверять сочетание входа и выхода; независимые пинги ступеней не доказывают работу цепочки. Нет циклов; ограниченный перебор; TCP/UDP/DNS совместимы. Для RU-сервиса при БС проверять именно нужный сервис через цепочку."
+    },
+    {
+      "g": "test",
+      "id": "tail",
+      "row": 2,
+      "col": 1,
+      "type": "process",
+      "title": "Tailnet: peer / subnet / exit",
+      "body": "Проверить реальное назначение",
+      "note": "Требуется реализованный встроенный адаптер в одном VpnService. Direct/DERP и AWG — свойства транспорта; tailscale ping сам по себе не доказывает доступность сервиса. AWG Keqdroid через mihomo не равен готовому Tailscale-AWG."
+    },
+    {
+      "g": "test",
+      "id": "eligible",
+      "row": 3,
+      "col": 0,
+      "type": "process",
+      "title": "Отфильтровать кандидатов",
+      "body": "Политика, ядро, протокол, конфигурация",
+      "note": "Xray или mihomo согласно возможностям. AWG использует поддерживающий backend. Не снимать запрет страны при пустом пуле. TCP-connect не является универсальным фильтром UDP-протоколов."
+    },
+    {
+      "g": "test",
+      "id": "schedule",
+      "row": 4,
+      "col": 0,
+      "type": "process",
+      "title": "Запланировать проверки",
+      "body": "Сначала прошлый рабочий + резерв",
+      "note": "Первый запуск без истории: ограниченный параллельный поиск по всем разрешённым подпискам до готового пути, затем исследование остальных. Полный скан — вручную/после значимых изменений; фон — активные группы, небольшой разнообразный резерв и ротация."
+    },
+    {
+      "g": "test",
+      "id": "profile",
+      "row": 5,
+      "col": 0,
+      "type": "decision",
+      "title": "Профиль этой цели?",
+      "body": "Общий / TG+Instagram / отдельный",
+      "note": ""
+    },
+    {
+      "g": "test",
+      "id": "common",
+      "row": 6,
+      "col": 0,
+      "type": "process",
+      "title": "Общий доступ",
+      "body": "Cloudflare / Google / Mozilla / Apple",
+      "note": "Выбранный малый connectivity endpoint или свой HTTPS URL; ожидаемый ответ версионируется. Расширенный профиль может задавать 2 из 3 независимых целей."
+    },
+    {
+      "g": "test",
+      "id": "instagram",
+      "row": 6,
+      "col": 1,
+      "type": "process",
+      "title": "Telegram + Instagram",
+      "body": "instagram.com/favicon.ico или свой URL",
+      "note": "Общий профиль по проверенному пользователем сценарию. Отдельный Telegram-тест не обязателен. Успех Google не заменяет Instagram; тест favicon не называется полной проверкой Telegram/звонков."
+    },
+    {
+      "g": "test",
+      "id": "custom",
+      "row": 7,
+      "col": 1,
+      "type": "process",
+      "title": "Отдельный сервисный профиль",
+      "body": "Свой URL / критерий ANY или ALL",
+      "note": "Только если пользователь разделил сервисы. Обязательную цель нельзя скрыто заменить другой. Для нужных маршрутов дополнительные DNS/UDP/протокольные проверки."
+    },
+    {
+      "g": "test",
+      "id": "probe",
+      "row": 7,
+      "col": 0,
+      "type": "process",
+      "title": "Выполнить принудительную HTTPS-пробу",
+      "body": "Именно кандидат / полная цепочка",
+      "note": "Не через текущий глобальный узел и без direct fallback. GET, TLS validation, deadline, байтовый лимит, разрешённые redirects; обход локального кеша. Не передавать cookies или пользовательские токены."
+    },
+    {
+      "g": "test",
+      "id": "body",
+      "row": 8,
+      "col": 0,
+      "type": "process",
+      "title": "Проверить ответ и передачу",
+      "body": "Статус + тело; cold/warm раздельно",
+      "note": "204 — успех без тела по профилю. Favicon — ожидаемый 200 и завершённое изображение; HTML/login/заглушка не успех. Отдельно TTFB, байты, длительность чтения и этап ошибки."
+    },
+    {
+      "g": "test",
+      "id": "data",
+      "row": 9,
+      "col": 0,
+      "type": "process",
+      "title": "Проверить данные перед сменой",
+      "body": "Ограниченный GET + требования маршрута",
+      "note": "64–256 КиБ — начальная гипотеза для испытаний; отдельный контролируемый объект и общий deadline, лимит даже при игнорировании Range. При необходимости DNS/UDP. Долгие сессии — ручные/лабораторные тесты."
+    },
+    {
+      "g": "test",
+      "id": "result",
+      "row": 10,
+      "col": 0,
+      "type": "decision",
+      "title": "Профиль пройден?",
+      "body": "По всем обязательным критериям",
+      "note": ""
+    },
+    {
+      "g": "test",
+      "id": "reject",
+      "row": 10,
+      "col": 1,
+      "type": "process",
+      "title": "Записать конкретную причину",
+      "body": "Не исключать узел из всех профилей",
+      "note": "Отказ Instagram не отменяет пригодность для общего доступа. Различать DNS/TLS/timeout, 403/429/5xx, ошибку тела. Отмена и устаревший результат не считаются отказом."
+    },
+    {
+      "g": "test",
+      "id": "rank",
+      "row": 11,
+      "col": 0,
+      "type": "process",
+      "title": "Выбрать устойчивый путь и резерв",
+      "body": "Надёжность → свежесть → разброс → RTT",
+      "note": "Кеш: ID полного пути + hash config + ядро/версия + эпоха сети + профиль/версия цели + метод + время. Новый узел с одним успехом не вытесняет устойчивый без наблюдений. Резерв по возможности разных провайдеров/хостов."
+    },
+    {
+      "g": "test",
+      "id": "candidate",
+      "row": 12,
+      "col": 0,
+      "type": "decision",
+      "title": "Есть допущенный кандидат?",
+      "body": "Проверен в текущем контексте",
+      "note": ""
+    },
+    {
+      "g": "test",
+      "id": "empty",
+      "row": 12,
+      "col": 1,
+      "type": "process",
+      "title": "Нет подходящего пути",
+      "body": "Диагностика; backoff; явный статус",
+      "note": "Не ослаблять запреты. Защищённый маршрут заблокирован/частичный доступ. При подозрении общей проблемы цели не объявлять все узлы неисправными."
+    },
+    {
+      "g": "health",
+      "id": "switch",
+      "row": 0,
+      "col": 0,
+      "type": "decision",
+      "title": "Почему меняем путь?",
+      "body": "Старт / восстановление / улучшение",
+      "note": ""
+    },
+    {
+      "g": "health",
+      "id": "improve",
+      "row": 1,
+      "col": 1,
+      "type": "decision",
+      "title": "Улучшение устойчиво и допустимо?",
+      "body": "Выгода, cooldown, риск разрыва сессий",
+      "note": ""
+    },
+    {
+      "g": "health",
+      "id": "keep",
+      "row": 2,
+      "col": 1,
+      "type": "process",
+      "title": "Сохранить работающий путь",
+      "body": "Продолжить мониторинг и ротацию",
+      "note": ""
+    },
+    {
+      "g": "health",
+      "id": "transaction",
+      "row": 1,
+      "col": 0,
+      "type": "process",
+      "title": "Применить один переход",
+      "body": "Подготовить → применить → проверить",
+      "note": "Один контроллер переключений. Ручной выбор отменяет старые задачи; эпоха сети/config проверяется перед применением. При hot switch менять только затронутую группу; иначе честный перезапуск ядра с возможным разрывом сессий."
+    },
+    {
+      "g": "health",
+      "id": "verify",
+      "row": 2,
+      "col": 0,
+      "type": "decision",
+      "title": "Активный путь реально работает?",
+      "body": "Повторная проба с итоговыми правилами/DNS",
+      "note": ""
+    },
+    {
+      "g": "health",
+      "id": "rollback",
+      "row": 3,
+      "col": 1,
+      "type": "process",
+      "title": "Откатить или проверить следующего",
+      "body": "Только ещё пригодный разрешённый путь",
+      "note": "Не бесконечный rollback на мёртвый узел. Если нет вариантов — backoff/частичный доступ. Системная блокировка трафика при полностью упавшем VpnService зависит от Android always-on / lockdown и требует отдельной приёмки."
+    },
+    {
+      "g": "health",
+      "id": "active",
+      "row": 3,
+      "col": 0,
+      "type": "process",
+      "title": "Подключено / частичный доступ",
+      "body": "Сохранить рабочую конфигурацию и карту путей",
+      "note": "Статус по каждой группе. Отказ необязательного маршрута не маскируется общим «всё работает». История и last-good — локальны для устройства."
+    },
+    {
+      "g": "health",
+      "id": "monitor",
+      "row": 4,
+      "col": 0,
+      "type": "process",
+      "title": "Следить за активными маршрутами",
+      "body": "Трафик + новые пробы + небольшой резерв",
+      "note": "Проверять все используемые профили/группы. Простой не отказ; RX одной старой сессии не доказывает работу новых соединений. Doze/сон учитываются; адаптивный бюджет, не полный скан каждый цикл."
+    },
+    {
+      "g": "health",
+      "id": "event",
+      "row": 5,
+      "col": 0,
+      "type": "decision",
+      "title": "Что изменилось?",
+      "body": "Сбой / сеть / настройки / улучшение / Stop",
+      "note": ""
+    },
+    {
+      "g": "health",
+      "id": "stop",
+      "row": 6,
+      "col": 1,
+      "type": "process",
+      "title": "Зафиксировать ручную остановку",
+      "body": "Отменить задачи и закрыть туннель",
+      "note": "desiredState=stopped сохраняется. Полное отключение по команде пользователя не запускает автоматическое восстановление."
+    },
+    {
+      "g": "health",
+      "id": "change",
+      "row": 6,
+      "col": 0,
+      "type": "process",
+      "title": "Смена сети или пробуждение",
+      "body": "Новое поколение; сверить реальный путь",
+      "note": "Повторно классифицировать физическую сеть и перепроверить нужные группы. Не применять поздние результаты прежних задач."
+    },
+    {
+      "g": "health",
+      "id": "settings",
+      "row": 7,
+      "col": 1,
+      "type": "process",
+      "title": "Подписка / правила / ручной выбор",
+      "body": "Отменить устаревшие решения; проверить diff",
+      "note": "Стабильные ID и overrides сохраняются. Если активный узел удалён/изменён — поиск разрешённой замены. Ручная фиксация имеет приоритет над Auto."
+    },
+    {
+      "g": "health",
+      "id": "failure",
+      "row": 7,
+      "col": 0,
+      "type": "decision",
+      "title": "Какова причина отказа?",
+      "body": "Процесс / маршрут / сеть / контрольная цель",
+      "note": ""
+    },
+    {
+      "g": "health",
+      "id": "target",
+      "row": 8,
+      "col": 1,
+      "type": "process",
+      "title": "Подозрение на отказ контрольной цели",
+      "body": "Независимая диагностика и backoff",
+      "note": "Одинаковая ошибка на независимых путях → не штрафовать все узлы и не переключаться бесконечно. Успешный Google не превращает отказ обязательного Instagram URL в успех. 429 требует паузы."
+    },
+    {
+      "g": "health",
+      "id": "recover",
+      "row": 8,
+      "col": 0,
+      "type": "process",
+      "title": "Подтвердить отказ и искать резерв",
+      "body": "Смерть ядра — без ожидания обычных раундов",
+      "note": "Обычный отказ подтверждать повторными независимыми сигналами. Восстановление не ждёт cooldown добровольного улучшения. Проверить свежий резерв, затем расширять поиск."
+    },
+    {
+      "g": "health",
+      "id": "retry",
+      "row": 9,
+      "col": 0,
+      "type": "process",
+      "title": "Повторить с ограниченным backoff",
+      "body": "Только если всё ещё нужно подключение",
+      "note": "Сбой процесса / OS kill / действительно выключенный туннель: восстановление разрешённой политикой. Состояние сети, права и конфигурация сверяются снова; ручная Stop всегда побеждает."
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge0",
+      "a": "start",
+      "b": "service",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge1",
+      "a": "service",
+      "b": "intent",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge2",
+      "a": "service",
+      "b": "monitor",
+      "label": "Да: принять состояние",
+      "kind": "return"
+    },
+    {
+      "id": "edge3",
+      "a": "intent",
+      "b": "config",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge4",
+      "a": "intent",
+      "b": "stopped",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge5",
+      "a": "stopped",
+      "b": "start",
+      "label": "Команда «Подключить»",
+      "kind": "return"
+    },
+    {
+      "id": "edge6",
+      "a": "config",
+      "b": "vpn",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge7",
+      "a": "config",
+      "b": "import",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge8",
+      "a": "import",
+      "b": "sync",
+      "label": "Синхронизация",
+      "kind": "normal"
+    },
+    {
+      "id": "edge9",
+      "a": "import",
+      "b": "validate",
+      "label": "Файл / подписка",
+      "kind": "normal"
+    },
+    {
+      "id": "edge10",
+      "a": "sync",
+      "b": "master",
+      "label": "Главное",
+      "kind": "normal"
+    },
+    {
+      "id": "edge11",
+      "a": "sync",
+      "b": "merge",
+      "label": "Все устройства",
+      "kind": "normal"
+    },
+    {
+      "id": "edge12",
+      "a": "master",
+      "b": "validate",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge13",
+      "a": "merge",
+      "b": "validate",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge14",
+      "a": "validate",
+      "b": "config",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge15",
+      "a": "vpn",
+      "b": "network",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge16",
+      "a": "vpn",
+      "b": "awaituser",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge17",
+      "a": "awaituser",
+      "b": "start",
+      "label": "После исправления",
+      "kind": "return"
+    },
+    {
+      "id": "edge18",
+      "a": "network",
+      "b": "online",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge19",
+      "a": "online",
+      "b": "netpolicy",
+      "label": "Доступна",
+      "kind": "normal"
+    },
+    {
+      "id": "edge20",
+      "a": "online",
+      "b": "waitnet",
+      "label": "Нет / portal",
+      "kind": "normal"
+    },
+    {
+      "id": "edge21",
+      "a": "waitnet",
+      "b": "network",
+      "label": "Сетевое событие",
+      "kind": "return"
+    },
+    {
+      "id": "edge22",
+      "a": "netpolicy",
+      "b": "mode",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge23",
+      "a": "netpolicy",
+      "b": "detect",
+      "label": "Авто",
+      "kind": "normal"
+    },
+    {
+      "id": "edge24",
+      "a": "detect",
+      "b": "mode",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge25",
+      "a": "mode",
+      "b": "rules",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge26",
+      "a": "rules",
+      "b": "compat",
+      "label": "Совместимый",
+      "kind": "normal"
+    },
+    {
+      "id": "edge27",
+      "a": "rules",
+      "b": "managed",
+      "label": "Управляемый",
+      "kind": "normal"
+    },
+    {
+      "id": "edge28",
+      "a": "compat",
+      "b": "compile",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge29",
+      "a": "managed",
+      "b": "compile",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge30",
+      "a": "compile",
+      "b": "scope",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge31",
+      "a": "scope",
+      "b": "global",
+      "label": "Базовый",
+      "kind": "normal"
+    },
+    {
+      "id": "edge32",
+      "a": "scope",
+      "b": "pergroup",
+      "label": "Расширенный",
+      "kind": "normal"
+    },
+    {
+      "id": "edge33",
+      "a": "global",
+      "b": "bindings",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge34",
+      "a": "pergroup",
+      "b": "bindings",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge35",
+      "a": "bindings",
+      "b": "kind",
+      "label": "Есть proxy / Tailnet",
+      "kind": "normal"
+    },
+    {
+      "id": "edge36",
+      "a": "bindings",
+      "b": "transaction",
+      "label": "Только direct / block",
+      "kind": "normal"
+    },
+    {
+      "id": "edge37",
+      "a": "active",
+      "b": "traffic",
+      "label": "Новые соединения",
+      "kind": "normal"
+    },
+    {
+      "id": "edge38",
+      "a": "traffic",
+      "b": "ingress",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge39",
+      "a": "ingress",
+      "b": "tun",
+      "label": "TUN",
+      "kind": "normal"
+    },
+    {
+      "id": "edge40",
+      "a": "ingress",
+      "b": "lan",
+      "label": "LAN",
+      "kind": "normal"
+    },
+    {
+      "id": "edge41",
+      "a": "tun",
+      "b": "access",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge42",
+      "a": "lan",
+      "b": "access",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge43",
+      "a": "access",
+      "b": "drop",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge44",
+      "a": "access",
+      "b": "match",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge45",
+      "a": "match",
+      "b": "action",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge46",
+      "a": "action",
+      "b": "block",
+      "label": "BLOCK",
+      "kind": "normal"
+    },
+    {
+      "id": "edge47",
+      "a": "action",
+      "b": "direct",
+      "label": "DIRECT",
+      "kind": "normal"
+    },
+    {
+      "id": "edge48",
+      "a": "action",
+      "b": "bound",
+      "label": "Proxy / Tailnet",
+      "kind": "normal"
+    },
+    {
+      "id": "edge49",
+      "a": "bound",
+      "b": "forward",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge50",
+      "a": "bound",
+      "b": "kind",
+      "label": "Нет: разрешённый fallback",
+      "kind": "return"
+    },
+    {
+      "id": "edge51",
+      "a": "forward",
+      "b": "monitor",
+      "label": "Результаты передачи",
+      "kind": "return"
+    },
+    {
+      "id": "edge52",
+      "a": "direct",
+      "b": "monitor",
+      "label": "Состояние direct",
+      "kind": "return"
+    },
+    {
+      "id": "edge53",
+      "a": "kind",
+      "b": "fixed",
+      "label": "Фиксированный",
+      "kind": "normal"
+    },
+    {
+      "id": "edge54",
+      "a": "kind",
+      "b": "auto",
+      "label": "Auto",
+      "kind": "normal"
+    },
+    {
+      "id": "edge55",
+      "a": "kind",
+      "b": "chain",
+      "label": "Цепочка",
+      "kind": "normal"
+    },
+    {
+      "id": "edge56",
+      "a": "kind",
+      "b": "tail",
+      "label": "Tailnet",
+      "kind": "normal"
+    },
+    {
+      "id": "edge57",
+      "a": "fixed",
+      "b": "eligible",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge58",
+      "a": "auto",
+      "b": "eligible",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge59",
+      "a": "chain",
+      "b": "eligible",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge60",
+      "a": "tail",
+      "b": "eligible",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge61",
+      "a": "eligible",
+      "b": "schedule",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge62",
+      "a": "schedule",
+      "b": "profile",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge63",
+      "a": "profile",
+      "b": "common",
+      "label": "Общий",
+      "kind": "normal"
+    },
+    {
+      "id": "edge64",
+      "a": "profile",
+      "b": "instagram",
+      "label": "TG + Instagram",
+      "kind": "normal"
+    },
+    {
+      "id": "edge65",
+      "a": "profile",
+      "b": "custom",
+      "label": "Отдельный",
+      "kind": "normal"
+    },
+    {
+      "id": "edge66",
+      "a": "common",
+      "b": "probe",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge67",
+      "a": "instagram",
+      "b": "probe",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge68",
+      "a": "custom",
+      "b": "probe",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge69",
+      "a": "probe",
+      "b": "body",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge70",
+      "a": "body",
+      "b": "data",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge71",
+      "a": "data",
+      "b": "result",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge72",
+      "a": "result",
+      "b": "rank",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge73",
+      "a": "result",
+      "b": "reject",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge74",
+      "a": "reject",
+      "b": "rank",
+      "label": "Итоги раунда",
+      "kind": "normal"
+    },
+    {
+      "id": "edge75",
+      "a": "rank",
+      "b": "candidate",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge76",
+      "a": "candidate",
+      "b": "switch",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge77",
+      "a": "candidate",
+      "b": "empty",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge78",
+      "a": "empty",
+      "b": "failure",
+      "label": "Разобрать причину",
+      "kind": "return"
+    },
+    {
+      "id": "edge79",
+      "a": "switch",
+      "b": "transaction",
+      "label": "Старт / восстановление",
+      "kind": "normal"
+    },
+    {
+      "id": "edge80",
+      "a": "switch",
+      "b": "improve",
+      "label": "Улучшение",
+      "kind": "normal"
+    },
+    {
+      "id": "edge81",
+      "a": "improve",
+      "b": "transaction",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge82",
+      "a": "improve",
+      "b": "keep",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge83",
+      "a": "keep",
+      "b": "monitor",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge84",
+      "a": "transaction",
+      "b": "verify",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge85",
+      "a": "verify",
+      "b": "active",
+      "label": "Да",
+      "kind": "normal"
+    },
+    {
+      "id": "edge86",
+      "a": "verify",
+      "b": "rollback",
+      "label": "Нет",
+      "kind": "normal"
+    },
+    {
+      "id": "edge87",
+      "a": "rollback",
+      "b": "schedule",
+      "label": "Следующий / прежний",
+      "kind": "return"
+    },
+    {
+      "id": "edge88",
+      "a": "active",
+      "b": "monitor",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge89",
+      "a": "monitor",
+      "b": "event",
+      "label": "",
+      "kind": "normal"
+    },
+    {
+      "id": "edge90",
+      "a": "event",
+      "b": "monitor",
+      "label": "Без изменений",
+      "kind": "return"
+    },
+    {
+      "id": "edge91",
+      "a": "event",
+      "b": "stop",
+      "label": "Stop",
+      "kind": "normal"
+    },
+    {
+      "id": "edge92",
+      "a": "stop",
+      "b": "stopped",
+      "label": "Отключено",
+      "kind": "return"
+    },
+    {
+      "id": "edge93",
+      "a": "event",
+      "b": "change",
+      "label": "Сеть / сон",
+      "kind": "normal"
+    },
+    {
+      "id": "edge94",
+      "a": "change",
+      "b": "network",
+      "label": "Перепроверить",
+      "kind": "return"
+    },
+    {
+      "id": "edge95",
+      "a": "event",
+      "b": "settings",
+      "label": "Конфигурация",
+      "kind": "normal"
+    },
+    {
+      "id": "edge96",
+      "a": "settings",
+      "b": "validate",
+      "label": "Новая версия",
+      "kind": "return"
+    },
+    {
+      "id": "edge97",
+      "a": "event",
+      "b": "schedule",
+      "label": "Поиск улучшения",
+      "kind": "return"
+    },
+    {
+      "id": "edge98",
+      "a": "event",
+      "b": "failure",
+      "label": "Ошибка / обрыв",
+      "kind": "normal"
+    },
+    {
+      "id": "edge99",
+      "a": "failure",
+      "b": "waitnet",
+      "label": "Сеть / portal",
+      "kind": "return"
+    },
+    {
+      "id": "edge100",
+      "a": "failure",
+      "b": "target",
+      "label": "Общая цель",
+      "kind": "normal"
+    },
+    {
+      "id": "edge101",
+      "a": "target",
+      "b": "retry",
+      "label": "После паузы",
+      "kind": "normal"
+    },
+    {
+      "id": "edge102",
+      "a": "failure",
+      "b": "recover",
+      "label": "Маршрут / ядро",
+      "kind": "normal"
+    },
+    {
+      "id": "edge103",
+      "a": "failure",
+      "b": "retry",
+      "label": "Причина неясна",
+      "kind": "normal"
+    },
+    {
+      "id": "edge104",
+      "a": "recover",
+      "b": "schedule",
+      "label": "Резерв → весь пул",
+      "kind": "return"
+    },
+    {
+      "id": "edge105",
+      "a": "retry",
+      "b": "intent",
+      "label": "Сверить намерение",
+      "kind": "return"
+    }
+  ],
+  "canvas_snapshot": [
+    {
+      "id": "route",
+      "kind": "container",
+      "label": "02 · Правила и путь каждого соединения",
+      "boundingBox": {
+        "x": 2600,
+        "y": 500,
+        "w": 2060,
+        "h": 5280
+      }
+    },
+    {
+      "id": "managed",
+      "kind": "block",
+      "label": "Собрать явные приоритеты\nОграничения → пользователь → провайдер",
+      "boundingBox": {
+        "x": 3780,
+        "y": 960,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "compile",
+      "kind": "block",
+      "label": "Скомпилировать правила и DNS\nOverrides, hosts, стабильные ID",
+      "boundingBox": {
+        "x": 2680,
+        "y": 1280,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "scope",
+      "kind": "block",
+      "label": "Как устроен Auto?\nОдин выход или отдельные группы",
+      "boundingBox": {
+        "x": 2680,
+        "y": 1600,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "pergroup",
+      "kind": "block",
+      "label": "Расширенный: Auto по маршрутам\nПравило → группа → свой профиль",
+      "boundingBox": {
+        "x": 3780,
+        "y": 1980,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "global",
+      "kind": "block",
+      "label": "Базовый: один общий выход\nProxy-правила → GlobalAuto → профиль",
+      "boundingBox": {
+        "x": 2680,
+        "y": 1980,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "traffic",
+      "kind": "block",
+      "label": "Принять новое соединение\nПосле активации таблицы маршрутов",
+      "boundingBox": {
+        "x": 2680,
+        "y": 2680,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "lan",
+      "kind": "block",
+      "label": "Проверить LAN-доступ\nВыбранный интерфейс + логин/пароль",
+      "boundingBox": {
+        "x": 3780,
+        "y": 3380,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "ingress",
+      "kind": "block",
+      "label": "Какой вход?\nAndroid TUN или LAN-прокси",
+      "boundingBox": {
+        "x": 2680,
+        "y": 3000,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "drop",
+      "kind": "block",
+      "label": "Отклонить соединение\nНеавторизованный / запрещённый вход",
+      "boundingBox": {
+        "x": 3780,
+        "y": 3730,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "action",
+      "kind": "block",
+      "label": "Действие правила?\nBLOCK / DIRECT / выбранный путь",
+      "boundingBox": {
+        "x": 2680,
+        "y": 4400,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "block",
+      "kind": "block",
+      "label": "BLOCK: завершить запрос\nПинг серверов не нужен",
+      "boundingBox": {
+        "x": 3780,
+        "y": 4780,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "bound",
+      "kind": "block",
+      "label": "Назначенный путь готов?\nСвежий допуск нужного профиля",
+      "boundingBox": {
+        "x": 2680,
+        "y": 5100,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "access",
+      "kind": "block",
+      "label": "Вход разрешён?\nПолитика TUN либо LAN-аутентификация",
+      "boundingBox": {
+        "x": 2680,
+        "y": 3700,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "match",
+      "kind": "block",
+      "label": "Найти первое совпавшее правило\nUID / домен / IP / порт / протокол / режим",
+      "boundingBox": {
+        "x": 2680,
+        "y": 4080,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "direct",
+      "kind": "block",
+      "label": "DIRECT: физическая сеть\nDNS direct; без прокси-проверок",
+      "boundingBox": {
+        "x": 2680,
+        "y": 4780,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "forward",
+      "kind": "block",
+      "label": "Передать данные по этому пути\nDNS согласован; нет direct fallback",
+      "boundingBox": {
+        "x": 2680,
+        "y": 5480,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "bindings",
+      "kind": "block",
+      "label": "Есть проверяемые пути?\nСервер / Auto / цепочка / Tailnet",
+      "boundingBox": {
+        "x": 2680,
+        "y": 2300,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "tun",
+      "kind": "block",
+      "label": "Проверить владельца TUN\nРазрешён / запрещён / неизвестен",
+      "boundingBox": {
+        "x": 2680,
+        "y": 3380,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "compat",
+      "kind": "block",
+      "label": "Сохранить порядок Keqdroid\nВключая пользовательское поле order",
+      "boundingBox": {
+        "x": 2680,
+        "y": 960,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "rules",
+      "kind": "block",
+      "label": "Какой порядок правил?\nСовместимый или управляемый",
+      "boundingBox": {
+        "x": 2680,
+        "y": 580,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "test",
+      "kind": "container",
+      "label": "03 · Кандидаты, проверки и выбор",
+      "boundingBox": {
+        "x": 0,
+        "y": 6500,
+        "w": 2060,
+        "h": 4640
+      }
+    },
+    {
+      "id": "fixed",
+      "kind": "block",
+      "label": "Фиксированный сервер\nНе менять без явного fallback",
+      "boundingBox": {
+        "x": 80,
+        "y": 6975,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "kind",
+      "kind": "block",
+      "label": "Тип цели маршрута?\nФиксированная / Auto / цепочка / Tailnet",
+      "boundingBox": {
+        "x": 80,
+        "y": 6580,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "chain",
+      "kind": "block",
+      "label": "Цепочка: выбрать полный путь\nСервер→сервер / группа→группа",
+      "boundingBox": {
+        "x": 80,
+        "y": 7310,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "eligible",
+      "kind": "block",
+      "label": "Отфильтровать кандидатов\nПолитика, ядро, протокол, конфигурация",
+      "boundingBox": {
+        "x": 80,
+        "y": 7645,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "schedule",
+      "kind": "block",
+      "label": "Запланировать проверки\nСначала прошлый рабочий + резерв",
+      "boundingBox": {
+        "x": 80,
+        "y": 7980,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "profile",
+      "kind": "block",
+      "label": "Профиль этой цели?\nОбщий / TG+Instagram / отдельный",
+      "boundingBox": {
+        "x": 80,
+        "y": 8315,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "probe",
+      "kind": "block",
+      "label": "Выполнить принудительную HTTPS-пробу\nИменно кандидат / полная цепочка",
+      "boundingBox": {
+        "x": 80,
+        "y": 9045,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "body",
+      "kind": "block",
+      "label": "Проверить ответ и передачу\nСтатус + тело; cold/warm раздельно",
+      "boundingBox": {
+        "x": 80,
+        "y": 9380,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "data",
+      "kind": "block",
+      "label": "Проверить данные перед сменой\nОграниченный GET + требования маршрута",
+      "boundingBox": {
+        "x": 80,
+        "y": 9715,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "reject",
+      "kind": "block",
+      "label": "Записать конкретную причину\nНе исключать узел из всех профилей",
+      "boundingBox": {
+        "x": 1180,
+        "y": 10080,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "empty",
+      "kind": "block",
+      "label": "Нет подходящего пути\nДиагностика; backoff; явный статус",
+      "boundingBox": {
+        "x": 1180,
+        "y": 10810,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "common",
+      "kind": "block",
+      "label": "Общий доступ\nCloudflare / Google / Mozilla / Apple",
+      "boundingBox": {
+        "x": 80,
+        "y": 8710,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "instagram",
+      "kind": "block",
+      "label": "Telegram + Instagram\ninstagram.com/favicon.ico или свой URL",
+      "boundingBox": {
+        "x": 1180,
+        "y": 8710,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "custom",
+      "kind": "block",
+      "label": "Отдельный сервисный профиль\nСвой URL / критерий ANY или ALL",
+      "boundingBox": {
+        "x": 1180,
+        "y": 9045,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "auto",
+      "kind": "block",
+      "label": "Auto: все разрешённые подписки\nФильтры группы, страны, теги, режим",
+      "boundingBox": {
+        "x": 1180,
+        "y": 6975,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "tail",
+      "kind": "block",
+      "label": "Tailnet: peer / subnet / exit\nПроверить реальное назначение",
+      "boundingBox": {
+        "x": 1180,
+        "y": 7310,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "result",
+      "kind": "block",
+      "label": "Профиль пройден?\nПо всем обязательным критериям",
+      "boundingBox": {
+        "x": 80,
+        "y": 10050,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "candidate",
+      "kind": "block",
+      "label": "Есть допущенный кандидат?\nПроверен в текущем контексте",
+      "boundingBox": {
+        "x": 80,
+        "y": 10780,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "rank",
+      "kind": "block",
+      "label": "Выбрать устойчивый путь и резерв\nНадёжность → свежесть → разброс → RTT",
+      "boundingBox": {
+        "x": 80,
+        "y": 10445,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "life",
+      "kind": "container",
+      "label": "01 · Запуск, конфигурация и физическая сеть",
+      "boundingBox": {
+        "x": 0,
+        "y": 500,
+        "w": 2060,
+        "h": 4230
+      }
+    },
+    {
+      "id": "intent",
+      "kind": "block",
+      "label": "Нужно подключение?\nКоманда или разрешённая автополитика",
+      "boundingBox": {
+        "x": 80,
+        "y": 1263.6363636363635,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "config",
+      "kind": "block",
+      "label": "Есть пригодная конфигурация?\nПервый запуск: обычно нет",
+      "boundingBox": {
+        "x": 80,
+        "y": 1635.4545454545455,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "master",
+      "kind": "block",
+      "label": "Главное → ведомые\nГлавное нельзя перезаписать с ведомого",
+      "boundingBox": {
+        "x": 80,
+        "y": 2379.090909090909,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "vpn",
+      "kind": "block",
+      "label": "Разрешение VPN получено?\nИ конфигурация поддерживается",
+      "boundingBox": {
+        "x": 80,
+        "y": 3002.727272727273,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "validate",
+      "kind": "block",
+      "label": "Проверить и применить настройки\nDry run, миграции, атомарность, откат",
+      "boundingBox": {
+        "x": 80,
+        "y": 2690.909090909091,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "network",
+      "kind": "block",
+      "label": "Привязаться к физической сети\nНовая эпоха: отменить старые проверки",
+      "boundingBox": {
+        "x": 80,
+        "y": 3374.545454545455,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "online",
+      "kind": "block",
+      "label": "Есть сеть без portal?\nНет связи / portal / доступна",
+      "boundingBox": {
+        "x": 80,
+        "y": 3686.363636363637,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "detect",
+      "kind": "block",
+      "label": "Определить режим напрямую\nНесколько целей, debounce, подтверждение",
+      "boundingBox": {
+        "x": 1180,
+        "y": 4088.181818181819,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "netpolicy",
+      "kind": "block",
+      "label": "Режим задан вручную?\nБС / ЧС либо Авто",
+      "boundingBox": {
+        "x": 80,
+        "y": 4058.181818181819,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "mode",
+      "kind": "block",
+      "label": "Зафиксировать режим сети\nБС / ЧС / UNKNOWN + эпоха",
+      "boundingBox": {
+        "x": 80,
+        "y": 4430.000000000001,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "waitnet",
+      "kind": "block",
+      "label": "Ожидать доступную сеть\nBackoff; не штрафовать все узлы",
+      "boundingBox": {
+        "x": 1180,
+        "y": 3716.363636363637,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "sync",
+      "kind": "block",
+      "label": "Режим синхронизации?\nTailnet / LAN / backup / сервис",
+      "boundingBox": {
+        "x": 1180,
+        "y": 2007.2727272727273,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "merge",
+      "kind": "block",
+      "label": "Изменения всех устройств\nВерсии полей, конфликты, удаления",
+      "boundingBox": {
+        "x": 1180,
+        "y": 2379.090909090909,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "awaituser",
+      "kind": "block",
+      "label": "Нужно действие пользователя\nРазрешение / исправление / импорт",
+      "boundingBox": {
+        "x": 1180,
+        "y": 3032.727272727273,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "stopped",
+      "kind": "block",
+      "label": "Остановлено пользователем\nАвтоматика не поднимает туннель",
+      "boundingBox": {
+        "x": 1180,
+        "y": 1293.6363636363635,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "import",
+      "kind": "block",
+      "label": "Добавить конфигурацию\nПодписка / файл / защищённая синхронизация",
+      "boundingBox": {
+        "x": 1180,
+        "y": 1665.4545454545455,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "start",
+      "kind": "block",
+      "label": "Запуск / возврат в приложение\nТакже: команда «Подключить»",
+      "boundingBox": {
+        "x": 80,
+        "y": 580,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "service",
+      "kind": "block",
+      "label": "Сервис уже работает?\nСверить реальное состояние",
+      "boundingBox": {
+        "x": 80,
+        "y": 891.8181818181818,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "health",
+      "kind": "container",
+      "label": "04 · Применение, мониторинг и восстановление",
+      "boundingBox": {
+        "x": 2600,
+        "y": 6500,
+        "w": 2060,
+        "h": 3530
+      }
+    },
+    {
+      "id": "improve",
+      "kind": "block",
+      "label": "Улучшение устойчиво и допустимо?\nВыгода, cooldown, риск разрыва сессий",
+      "boundingBox": {
+        "x": 3780,
+        "y": 6956.666666666667,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "transaction",
+      "kind": "block",
+      "label": "Применить один переход\nПодготовить → применить → проверить",
+      "boundingBox": {
+        "x": 2680,
+        "y": 6986.666666666667,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "keep",
+      "kind": "block",
+      "label": "Сохранить работающий путь\nПродолжить мониторинг и ротацию",
+      "boundingBox": {
+        "x": 3780,
+        "y": 7363.333333333333,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "rollback",
+      "kind": "block",
+      "label": "Откатить или проверить следующего\nТолько ещё пригодный разрешённый путь",
+      "boundingBox": {
+        "x": 3780,
+        "y": 7710,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "monitor",
+      "kind": "block",
+      "label": "Следить за активными маршрутами\nТрафик + новые пробы + небольшой резерв",
+      "boundingBox": {
+        "x": 2680,
+        "y": 8026.666666666667,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "event",
+      "kind": "block",
+      "label": "Что изменилось?\nСбой / сеть / настройки / улучшение / Stop",
+      "boundingBox": {
+        "x": 2680,
+        "y": 8343.333333333334,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "change",
+      "kind": "block",
+      "label": "Смена сети или пробуждение\nНовое поколение; сверить реальный путь",
+      "boundingBox": {
+        "x": 2680,
+        "y": 8720,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "stop",
+      "kind": "block",
+      "label": "Зафиксировать ручную остановку\nОтменить задачи и закрыть туннель",
+      "boundingBox": {
+        "x": 3780,
+        "y": 8720,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "failure",
+      "kind": "block",
+      "label": "Какова причина отказа?\nПроцесс / маршрут / сеть / контрольная цель",
+      "boundingBox": {
+        "x": 2680,
+        "y": 9036.666666666666,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "settings",
+      "kind": "block",
+      "label": "Подписка / правила / ручной выбор\nОтменить устаревшие решения; проверить diff",
+      "boundingBox": {
+        "x": 3780,
+        "y": 9066.666666666666,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "target",
+      "kind": "block",
+      "label": "Подозрение на отказ контрольной цели\nНезависимая диагностика и backoff",
+      "boundingBox": {
+        "x": 3780,
+        "y": 9413.333333333332,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "retry",
+      "kind": "block",
+      "label": "Повторить с ограниченным backoff\nТолько если всё ещё нужно подключение",
+      "boundingBox": {
+        "x": 2680,
+        "y": 9730,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "active",
+      "kind": "block",
+      "label": "Подключено / частичный доступ\nСохранить рабочую конфигурацию и карту путей",
+      "boundingBox": {
+        "x": 2680,
+        "y": 7710,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "recover",
+      "kind": "block",
+      "label": "Подтвердить отказ и искать резерв\nСмерть ядра — без ожидания обычных раундов",
+      "boundingBox": {
+        "x": 2680,
+        "y": 9413.333333333332,
+        "w": 800,
+        "h": 220
+      }
+    },
+    {
+      "id": "switch",
+      "kind": "block",
+      "label": "Почему меняем путь?\nСтарт / восстановление / улучшение",
+      "boundingBox": {
+        "x": 2680,
+        "y": 6580,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "verify",
+      "kind": "block",
+      "label": "Активный путь реально работает?\nПовторная проба с итоговыми правилами/DNS",
+      "boundingBox": {
+        "x": 2680,
+        "y": 7333.333333333333,
+        "w": 800,
+        "h": 280
+      }
+    },
+    {
+      "id": "edge49",
+      "kind": "line",
+      "from": "bound",
+      "to": "forward"
+    },
+    {
+      "id": "edge47",
+      "kind": "line",
+      "from": "action",
+      "to": "direct"
+    },
+    {
+      "id": "edge48",
+      "kind": "line",
+      "from": "action",
+      "to": "bound"
+    },
+    {
+      "id": "edge52",
+      "kind": "line",
+      "from": "direct",
+      "to": "monitor"
+    },
+    {
+      "id": "edge53",
+      "kind": "line",
+      "from": "kind",
+      "to": "fixed"
+    },
+    {
+      "id": "edge50",
+      "kind": "line",
+      "from": "bound",
+      "to": "kind"
+    },
+    {
+      "id": "edge51",
+      "kind": "line",
+      "from": "forward",
+      "to": "monitor"
+    },
+    {
+      "id": "edge56",
+      "kind": "line",
+      "from": "kind",
+      "to": "tail"
+    },
+    {
+      "id": "edge57",
+      "kind": "line",
+      "from": "fixed",
+      "to": "eligible"
+    },
+    {
+      "id": "edge54",
+      "kind": "line",
+      "from": "kind",
+      "to": "auto"
+    },
+    {
+      "id": "edge55",
+      "kind": "line",
+      "from": "kind",
+      "to": "chain"
+    },
+    {
+      "id": "edge58",
+      "kind": "line",
+      "from": "auto",
+      "to": "eligible"
+    },
+    {
+      "id": "edge59",
+      "kind": "line",
+      "from": "chain",
+      "to": "eligible"
+    },
+    {
+      "id": "edge63",
+      "kind": "line",
+      "from": "profile",
+      "to": "common"
+    },
+    {
+      "id": "edge64",
+      "kind": "line",
+      "from": "profile",
+      "to": "instagram"
+    },
+    {
+      "id": "edge61",
+      "kind": "line",
+      "from": "eligible",
+      "to": "schedule"
+    },
+    {
+      "id": "edge62",
+      "kind": "line",
+      "from": "schedule",
+      "to": "profile"
+    },
+    {
+      "id": "edge67",
+      "kind": "line",
+      "from": "instagram",
+      "to": "probe"
+    },
+    {
+      "id": "edge68",
+      "kind": "line",
+      "from": "custom",
+      "to": "probe"
+    },
+    {
+      "id": "edge65",
+      "kind": "line",
+      "from": "profile",
+      "to": "custom"
+    },
+    {
+      "id": "edge66",
+      "kind": "line",
+      "from": "common",
+      "to": "probe"
+    },
+    {
+      "id": "edge60",
+      "kind": "line",
+      "from": "tail",
+      "to": "eligible"
+    },
+    {
+      "id": "edge100",
+      "kind": "line",
+      "from": "failure",
+      "to": "target"
+    },
+    {
+      "id": "edge101",
+      "kind": "line",
+      "from": "target",
+      "to": "retry"
+    },
+    {
+      "id": "edge102",
+      "kind": "line",
+      "from": "failure",
+      "to": "recover"
+    },
+    {
+      "id": "edge103",
+      "kind": "line",
+      "from": "failure",
+      "to": "retry"
+    },
+    {
+      "id": "edge69",
+      "kind": "line",
+      "from": "probe",
+      "to": "body"
+    },
+    {
+      "id": "edge104",
+      "kind": "line",
+      "from": "recover",
+      "to": "schedule"
+    },
+    {
+      "id": "edge105",
+      "kind": "line",
+      "from": "retry",
+      "to": "intent"
+    },
+    {
+      "id": "edge74",
+      "kind": "line",
+      "from": "reject",
+      "to": "rank"
+    },
+    {
+      "id": "edge75",
+      "kind": "line",
+      "from": "rank",
+      "to": "candidate"
+    },
+    {
+      "id": "edge72",
+      "kind": "line",
+      "from": "result",
+      "to": "rank"
+    },
+    {
+      "id": "edge73",
+      "kind": "line",
+      "from": "result",
+      "to": "reject"
+    },
+    {
+      "id": "edge78",
+      "kind": "line",
+      "from": "empty",
+      "to": "failure"
+    },
+    {
+      "id": "edge79",
+      "kind": "line",
+      "from": "switch",
+      "to": "transaction"
+    },
+    {
+      "id": "edge76",
+      "kind": "line",
+      "from": "candidate",
+      "to": "switch"
+    },
+    {
+      "id": "edge77",
+      "kind": "line",
+      "from": "candidate",
+      "to": "empty"
+    },
+    {
+      "id": "edge70",
+      "kind": "line",
+      "from": "body",
+      "to": "data"
+    },
+    {
+      "id": "edge71",
+      "kind": "line",
+      "from": "data",
+      "to": "result"
+    },
+    {
+      "id": "edge85",
+      "kind": "line",
+      "from": "verify",
+      "to": "active"
+    },
+    {
+      "id": "edge86",
+      "kind": "line",
+      "from": "verify",
+      "to": "rollback"
+    },
+    {
+      "id": "edge83",
+      "kind": "line",
+      "from": "keep",
+      "to": "monitor"
+    },
+    {
+      "id": "edge84",
+      "kind": "line",
+      "from": "transaction",
+      "to": "verify"
+    },
+    {
+      "id": "edge89",
+      "kind": "line",
+      "from": "monitor",
+      "to": "event"
+    },
+    {
+      "id": "edge87",
+      "kind": "line",
+      "from": "rollback",
+      "to": "schedule"
+    },
+    {
+      "id": "edge88",
+      "kind": "line",
+      "from": "active",
+      "to": "monitor"
+    },
+    {
+      "id": "edge81",
+      "kind": "line",
+      "from": "improve",
+      "to": "transaction"
+    },
+    {
+      "id": "edge82",
+      "kind": "line",
+      "from": "improve",
+      "to": "keep"
+    },
+    {
+      "id": "edge80",
+      "kind": "line",
+      "from": "switch",
+      "to": "improve"
+    },
+    {
+      "id": "edge96",
+      "kind": "line",
+      "from": "settings",
+      "to": "validate"
+    },
+    {
+      "id": "edge97",
+      "kind": "line",
+      "from": "event",
+      "to": "schedule"
+    },
+    {
+      "id": "edge94",
+      "kind": "line",
+      "from": "change",
+      "to": "network"
+    },
+    {
+      "id": "edge95",
+      "kind": "line",
+      "from": "event",
+      "to": "settings"
+    },
+    {
+      "id": "edge12",
+      "kind": "line",
+      "from": "master",
+      "to": "validate"
+    },
+    {
+      "id": "edge13",
+      "kind": "line",
+      "from": "merge",
+      "to": "validate"
+    },
+    {
+      "id": "edge10",
+      "kind": "line",
+      "from": "sync",
+      "to": "master"
+    },
+    {
+      "id": "edge98",
+      "kind": "line",
+      "from": "event",
+      "to": "failure"
+    },
+    {
+      "id": "edge11",
+      "kind": "line",
+      "from": "sync",
+      "to": "merge"
+    },
+    {
+      "id": "edge99",
+      "kind": "line",
+      "from": "failure",
+      "to": "waitnet"
+    },
+    {
+      "id": "edge92",
+      "kind": "line",
+      "from": "stop",
+      "to": "stopped"
+    },
+    {
+      "id": "edge93",
+      "kind": "line",
+      "from": "event",
+      "to": "change"
+    },
+    {
+      "id": "edge90",
+      "kind": "line",
+      "from": "event",
+      "to": "monitor"
+    },
+    {
+      "id": "edge91",
+      "kind": "line",
+      "from": "event",
+      "to": "stop"
+    },
+    {
+      "id": "edge9",
+      "kind": "line",
+      "from": "import",
+      "to": "validate"
+    },
+    {
+      "id": "edge7",
+      "kind": "line",
+      "from": "config",
+      "to": "import"
+    },
+    {
+      "id": "edge8",
+      "kind": "line",
+      "from": "import",
+      "to": "sync"
+    },
+    {
+      "id": "edge5",
+      "kind": "line",
+      "from": "stopped",
+      "to": "start"
+    },
+    {
+      "id": "edge6",
+      "kind": "line",
+      "from": "config",
+      "to": "vpn"
+    },
+    {
+      "id": "edge16",
+      "kind": "line",
+      "from": "vpn",
+      "to": "awaituser"
+    },
+    {
+      "id": "edge3",
+      "kind": "line",
+      "from": "intent",
+      "to": "config"
+    },
+    {
+      "id": "edge17",
+      "kind": "line",
+      "from": "awaituser",
+      "to": "start"
+    },
+    {
+      "id": "edge4",
+      "kind": "line",
+      "from": "intent",
+      "to": "stopped"
+    },
+    {
+      "id": "edge14",
+      "kind": "line",
+      "from": "validate",
+      "to": "config"
+    },
+    {
+      "id": "edge1",
+      "kind": "line",
+      "from": "service",
+      "to": "intent"
+    },
+    {
+      "id": "edge15",
+      "kind": "line",
+      "from": "vpn",
+      "to": "network"
+    },
+    {
+      "id": "edge2",
+      "kind": "line",
+      "from": "service",
+      "to": "monitor"
+    },
+    {
+      "id": "edge0",
+      "kind": "line",
+      "from": "start",
+      "to": "service"
+    },
+    {
+      "id": "edge18",
+      "kind": "line",
+      "from": "network",
+      "to": "online"
+    },
+    {
+      "id": "edge19",
+      "kind": "line",
+      "from": "online",
+      "to": "netpolicy"
+    },
+    {
+      "id": "edge20",
+      "kind": "line",
+      "from": "online",
+      "to": "waitnet"
+    },
+    {
+      "id": "edge23",
+      "kind": "line",
+      "from": "netpolicy",
+      "to": "detect"
+    },
+    {
+      "id": "edge24",
+      "kind": "line",
+      "from": "detect",
+      "to": "mode"
+    },
+    {
+      "id": "edge21",
+      "kind": "line",
+      "from": "waitnet",
+      "to": "network"
+    },
+    {
+      "id": "edge22",
+      "kind": "line",
+      "from": "netpolicy",
+      "to": "mode"
+    },
+    {
+      "id": "edge27",
+      "kind": "line",
+      "from": "rules",
+      "to": "managed"
+    },
+    {
+      "id": "edge28",
+      "kind": "line",
+      "from": "compat",
+      "to": "compile"
+    },
+    {
+      "id": "edge25",
+      "kind": "line",
+      "from": "mode",
+      "to": "rules"
+    },
+    {
+      "id": "edge26",
+      "kind": "line",
+      "from": "rules",
+      "to": "compat"
+    },
+    {
+      "id": "edge29",
+      "kind": "line",
+      "from": "managed",
+      "to": "compile"
+    },
+    {
+      "id": "edge30",
+      "kind": "line",
+      "from": "compile",
+      "to": "scope"
+    },
+    {
+      "id": "edge31",
+      "kind": "line",
+      "from": "scope",
+      "to": "global"
+    },
+    {
+      "id": "edge34",
+      "kind": "line",
+      "from": "pergroup",
+      "to": "bindings"
+    },
+    {
+      "id": "edge35",
+      "kind": "line",
+      "from": "bindings",
+      "to": "kind"
+    },
+    {
+      "id": "edge32",
+      "kind": "line",
+      "from": "scope",
+      "to": "pergroup"
+    },
+    {
+      "id": "edge33",
+      "kind": "line",
+      "from": "global",
+      "to": "bindings"
+    },
+    {
+      "id": "edge38",
+      "kind": "line",
+      "from": "traffic",
+      "to": "ingress"
+    },
+    {
+      "id": "edge39",
+      "kind": "line",
+      "from": "ingress",
+      "to": "tun"
+    },
+    {
+      "id": "edge36",
+      "kind": "line",
+      "from": "bindings",
+      "to": "transaction"
+    },
+    {
+      "id": "edge37",
+      "kind": "line",
+      "from": "active",
+      "to": "traffic"
+    },
+    {
+      "id": "edge41",
+      "kind": "line",
+      "from": "tun",
+      "to": "access"
+    },
+    {
+      "id": "edge42",
+      "kind": "line",
+      "from": "lan",
+      "to": "access"
+    },
+    {
+      "id": "edge40",
+      "kind": "line",
+      "from": "ingress",
+      "to": "lan"
+    },
+    {
+      "id": "edge45",
+      "kind": "line",
+      "from": "match",
+      "to": "action"
+    },
+    {
+      "id": "edge46",
+      "kind": "line",
+      "from": "action",
+      "to": "block"
+    },
+    {
+      "id": "edge43",
+      "kind": "line",
+      "from": "access",
+      "to": "drop"
+    },
+    {
+      "id": "edge44",
+      "kind": "line",
+      "from": "access",
+      "to": "match"
+    },
+    {
+      "id": "notes",
+      "kind": "block",
+      "label": "Сплошные стрелки — действия и развилки; пунктир — события и возвраты. Профили оцениваются независимо.\nСвой HTTPS URL обязателен. Instagram — общая контрольная цель TG+Instagram по выбранной пользователем политике.\nПороги, интервалы и итоговый алгоритм классификации уточняются испытаниями. Смена выхода может оборвать сессии.\nИсточник: orrtyom/orrdroid · PLAN.md, PROBE_PROFILES.md, SYNC.md, LAN_PROXY.md · ТЗ 0.4.",
+      "boundingBox": {
+        "x": -1,
+        "y": 11642,
+        "w": 4800,
+        "h": 280
+      }
+    },
+    {
+      "id": "legend2",
+      "kind": "block",
+      "label": "Условие / выбор",
+      "boundingBox": {
+        "x": 2401.5,
+        "y": 11381.5,
+        "w": 1000,
+        "h": 140
+      }
+    },
+    {
+      "id": "legend1",
+      "kind": "block",
+      "label": "Действие",
+      "boundingBox": {
+        "x": 1200.5,
+        "y": 11381.5,
+        "w": 1000,
+        "h": 140
+      }
+    },
+    {
+      "id": "legend3",
+      "kind": "block",
+      "label": "Отказ / ограничение",
+      "boundingBox": {
+        "x": 3602.5,
+        "y": 11381.5,
+        "w": 1000,
+        "h": 140
+      }
+    },
+    {
+      "id": "legend0",
+      "kind": "block",
+      "label": "Состояние / начало / конец",
+      "boundingBox": {
+        "x": -0.5,
+        "y": 11381.5,
+        "w": 1000,
+        "h": 140
+      }
+    },
+    {
+      "id": "subtitle",
+      "kind": "block",
+      "label": "Проект по ТЗ 0.4 и уточнениям чата · 12.11.2026 · Не схема уже реализованного клиента\nОдна страница, связанные ветви. Блоки редактируются; подробные условия — в заметках блоков.",
+      "boundingBox": {
+        "x": 0,
+        "y": 230,
+        "w": 4800,
+        "h": 180
+      }
+    },
+    {
+      "id": "title",
+      "kind": "block",
+      "label": "Orrdroid · единая схема выбора пути трафика",
+      "boundingBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4800,
+        "h": 150
+      }
+    }
+  ]
+}
