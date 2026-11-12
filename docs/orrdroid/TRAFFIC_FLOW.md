@@ -33,3 +33,12 @@
 Редактируем тот же документ Lucid. После смысловых изменений обновляем модель и номер редакции в репозитории; автоматической двусторонней синхронизации Lucid↔GitHub пока нет.
 
 Основания: [PLAN.md](PLAN.md), [PROBE_PROFILES.md](PROBE_PROFILES.md), [SYNC.md](SYNC.md), [LAN_PROXY.md](LAN_PROXY.md), [SECURITY_ISOLATION.md](SECURITY_ISOLATION.md).
+
+## Четыре файла Draw.io
+
+1. [Запуск и определение сети](diagrams/drawio/Orrdroid-01-startup-network.drawio)
+2. [Правила и маршрутизация](diagrams/drawio/Orrdroid-02-routing.drawio)
+3. [Проверки и автовыбор](diagrams/drawio/Orrdroid-03-probes-selection.drawio)
+4. [Мониторинг и восстановление](diagrams/drawio/Orrdroid-04-monitoring-recovery.drawio)
+
+Откройте нужный `.drawio` в diagrams.net. Фиолетовый блок показывает номер схемы и точку продолжения. Подробные условия видны в подсказках к блокам. Комплект сохраняет 73 смысловых блока и 106 связей редакции 1.
