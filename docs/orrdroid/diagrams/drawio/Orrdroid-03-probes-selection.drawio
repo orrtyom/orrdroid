@@ -8,7 +8,7 @@
         <mxCell id="heading" value="Orrdroid · 03 / 04&lt;br&gt;&lt;b&gt;Проверки и автовыбор&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Inter;fontColor=#15263F;fontSize=23;" vertex="1" parent="1">
           <mxGeometry x="48" y="20" width="1276.0" height="56" as="geometry" />
         </mxCell>
-        <object id="subtitle" label="Проект по ТЗ 0.4 · редакция 1 · 12.11.2026" link="https://github.com/orrtyom/orrdroid/blob/861fbddcababff93dfbc086676ba91a37f086ee5/docs/orrdroid/diagrams/traffic-flow.v1.json">
+        <object id="subtitle" label="Проект по ТЗ 0.4 · редакция 2 · 12.11.2026" link="https://github.com/orrtyom/orrdroid/blob/main/docs/orrdroid/diagrams/traffic-flow.v2.json">
           <mxCell style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Inter;fontColor=#15263F;fontSize=13;fontColor=#536479;" vertex="1" parent="1">
             <mxGeometry x="48" y="82" width="1276.0" height="20" as="geometry" />
           </mxCell>
@@ -38,7 +38,7 @@
             <mxGeometry x="1074.0" y="276.0" width="238" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object id="eligible" label="&lt;b&gt;Отфильтровать кандидатов&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Политика, ядро, протокол, конфигурация&lt;/span&gt;" tooltip="Политика, ядро, протокол, конфигурация&lt;br&gt;Xray или mihomo согласно возможностям. AWG использует поддерживающий backend. Не снимать запрет страны при пустом пуле. TCP-connect не является универсальным фильтром UDP-протоколов.">
+        <object id="eligible" label="&lt;b&gt;Отфильтровать кандидатов&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Страна выхода · ядро · протокол · настройки&lt;/span&gt;" tooltip="Страна выхода · ядро · протокол · настройки&lt;br&gt;Xray или mihomo согласно возможностям. AWG использует поддерживающий backend. Не снимать запрет страны при пустом пуле. TCP-connect не является универсальным фильтром UDP-протоколов. Для российского назначения вне белых списков в БС требуется подтверждённый выход в РФ. Для ограничения доступа из РФ в ЧС требуется подтверждённый выход вне РФ. У цепочки проверять фактический выход последней ступени.">
           <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
             <mxGeometry x="394.0" y="428.0" width="238" height="80" as="geometry" />
           </mxCell>
@@ -48,7 +48,7 @@
             <mxGeometry x="394.0" y="580.0" width="238" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object id="profile" label="&lt;b&gt;Профиль этой цели?&lt;/b&gt;" tooltip="Общий / TG+Instagram / отдельный">
+        <object id="profile" label="&lt;b&gt;Профиль этой цели?&lt;/b&gt;" tooltip="Общий / TG+Instagram / отдельный&lt;br&gt;После проверки страны подтвердить доступ к назначению через полный путь. Для блокировки или замедления РКН использовать профиль сервиса. Для запрета доступа из РФ дополнительно требуется выход вне РФ.">
           <mxCell style="rhombus;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#FFF4D9;strokeColor=#B88633;" vertex="1" parent="1">
             <mxGeometry x="388.0" y="720.0" width="250" height="104" as="geometry" />
           </mxCell>
@@ -103,7 +103,7 @@
             <mxGeometry x="1068.0" y="720.0" width="250" height="104" as="geometry" />
           </mxCell>
         </object>
-        <object id="empty" label="&lt;b&gt;Нет подходящего пути&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Диагностика; backoff; явный статус&lt;/span&gt;" tooltip="Диагностика; backoff; явный статус&lt;br&gt;Не ослаблять запреты. Защищённый маршрут заблокирован/частичный доступ. При подозрении общей проблемы цели не объявлять все узлы неисправными.">
+        <object id="empty" label="&lt;b&gt;Нет подходящего пути&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Диагностика; backoff; явный статус&lt;/span&gt;" tooltip="Диагностика; backoff; явный статус&lt;br&gt;Не ослаблять запреты. Защищённый маршрут заблокирован/частичный доступ. При подозрении общей проблемы цели не объявлять все узлы неисправными. Если обязательную страну выхода подтвердить не удалось, для затронутого трафика показать «нет подходящего маршрута».">
           <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#FCE9E8;strokeColor=#C47670;" vertex="1" parent="1">
             <mxGeometry x="1074.0" y="580.0" width="238" height="80" as="geometry" />
           </mxCell>

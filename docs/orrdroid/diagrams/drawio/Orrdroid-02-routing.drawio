@@ -8,7 +8,7 @@
         <mxCell id="heading" value="Orrdroid · 02 / 04&lt;br&gt;&lt;b&gt;Правила и маршрутизация&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Inter;fontColor=#15263F;fontSize=23;" vertex="1" parent="1">
           <mxGeometry x="48" y="20" width="1610.0" height="56" as="geometry" />
         </mxCell>
-        <object id="subtitle" label="Проект по ТЗ 0.4 · редакция 1 · 12.11.2026" link="https://github.com/orrtyom/orrdroid/blob/861fbddcababff93dfbc086676ba91a37f086ee5/docs/orrdroid/diagrams/traffic-flow.v1.json">
+        <object id="subtitle" label="Проект по ТЗ 0.4 · редакция 2 · 12.11.2026" link="https://github.com/orrtyom/orrdroid/blob/main/docs/orrdroid/diagrams/traffic-flow.v2.json">
           <mxCell style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Inter;fontColor=#15263F;fontSize=13;fontColor=#536479;" vertex="1" parent="1">
             <mxGeometry x="48" y="82" width="1610.0" height="20" as="geometry" />
           </mxCell>
@@ -23,7 +23,7 @@
             <mxGeometry x="54.0" y="276.0" width="238" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object id="managed" label="&lt;b&gt;Собрать явные приоритеты&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Ограничения → пользователь → провайдер&lt;/span&gt;" tooltip="Ограничения → пользователь → провайдер&lt;br&gt;Полный порядок: обязательные ограничения → пользовательские блокировки → специфичные правила приложений/сервисов → общие пользовательские → разрешённые правила провайдера → fallback.">
+        <object id="managed" label="&lt;b&gt;Собрать явные приоритеты&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Ограничения → правила пользователя → пресет&lt;/span&gt;" tooltip="Ограничения → правила пользователя → пресет&lt;br&gt;Обязательные ограничения и явные правила пользователя имеют приоритет. Далее пресет активного режима, разрешённые правила провайдера и fallback.">
           <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
             <mxGeometry x="394.0" y="276.0" width="238" height="80" as="geometry" />
           </mxCell>
@@ -38,7 +38,7 @@
             <mxGeometry x="48.0" y="568.0" width="250" height="104" as="geometry" />
           </mxCell>
         </object>
-        <object id="global" label="&lt;b&gt;Базовый: один общий выход&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Proxy-правила → GlobalAuto → профиль&lt;/span&gt;" tooltip="Proxy-правила → GlobalAuto → профиль&lt;br&gt;В GlobalAuto пользователь выбирает общий либо TG+Instagram профиль. Direct и block продолжают действовать.">
+        <object id="global" label="&lt;b&gt;Базовый: один общий выход&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Proxy-правила → GlobalAuto → профиль&lt;/span&gt;" tooltip="Proxy-правила → GlobalAuto → профиль&lt;br&gt;В GlobalAuto пользователь выбирает общий либо TG+Instagram профиль. Direct и block продолжают действовать. Обязательные привязки пресетов к выходу в РФ и вне РФ сохраняются. Если ядро не поддерживает все нужные выходы одновременно, показать конфликт конфигурации.">
           <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
             <mxGeometry x="54.0" y="732.0" width="238" height="80" as="geometry" />
           </mxCell>
@@ -83,7 +83,7 @@
             <mxGeometry x="1414.0" y="580.0" width="238" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object id="match" label="&lt;b&gt;Найти первое совпавшее правило&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;UID / домен / IP / порт / протокол / режим&lt;/span&gt;" tooltip="UID / домен / IP / порт / протокол / режим">
+        <object id="match" label="&lt;b&gt;Найти первое совпавшее правило&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;UID / домен / IP / порт / протокол / режим&lt;/span&gt;" tooltip="UID / домен / IP / порт / протокол / режим&lt;br&gt;Использовать применённую таблицу и её порядок. Условия geosite:ru и geoip:ru объединяются через ИЛИ. В БС правило мобильного белого списка идёт непосредственно перед правилом выхода в РФ. В ЧС после трёх категорий исключений действует DIRECT.">
           <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
             <mxGeometry x="1074.0" y="732.0" width="238" height="80" as="geometry" />
           </mxCell>
@@ -103,7 +103,7 @@
             <mxGeometry x="1414.0" y="1036.0" width="238" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object id="bound" label="&lt;b&gt;Назначенный путь готов?&lt;/b&gt;" tooltip="Свежий допуск нужного профиля">
+        <object id="bound" label="&lt;b&gt;Назначенный путь готов?&lt;/b&gt;" tooltip="Свежий допуск нужного профиля&lt;br&gt;Проверить свежесть допуска нужного профиля и требования к фактической стране выхода. Резерв должен удовлетворять тем же требованиям.">
           <mxCell style="rhombus;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#FFF4D9;strokeColor=#B88633;" vertex="1" parent="1">
             <mxGeometry x="1068.0" y="1024.0" width="250" height="104" as="geometry" />
           </mxCell>
@@ -111,6 +111,21 @@
         <object id="forward" label="&lt;b&gt;Передать данные по этому пути&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;DNS согласован; нет direct fallback&lt;/span&gt;" tooltip="DNS согласован; нет direct fallback&lt;br&gt;Для группы — закреплённый активный outbound, для цепочки — весь путь, для Tailnet — заданный peer/subnet/exit. Отказ конкретной группы не требует перезапуска всего VPN.">
           <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
             <mxGeometry x="1074.0" y="1188.0" width="238" height="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="mode_rules" label="&lt;b&gt;Активен БС или ЧС?&lt;/b&gt;" tooltip="Подтверждённый или заданный вручную режим&lt;br&gt;Пресет действует в управляемой таблице. UNKNOWN сохраняет действующую политику.">
+          <mxCell style="rhombus;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#FFF4D9;strokeColor=#B88633;" vertex="1" parent="1">
+            <mxGeometry x="388.0" y="416.0" width="250" height="104" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="bs_rules" label="&lt;b&gt;БС · правила по порядку&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;1. Мобильные белые списки → DIRECT&lt;br&gt;2. geosite:ru или geoip:ru → выход в РФ&lt;br&gt;3. Остальные → правила БС&lt;/span&gt;" tooltip="1. Мобильные белые списки → DIRECT&lt;br&gt;2. geosite:ru или geoip:ru → выход в РФ&lt;br&gt;3. Остальные → правила БС&lt;br&gt;Правило 2 ставится непосредственно после правила 1. Достаточно совпадения домена или IP назначения. Требуется подтверждённый выход в России. У цепочки это фактический выход последней ступени.">
+          <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
+            <mxGeometry x="372.0" y="564.0" width="282" height="112" as="geometry" />
+          </mxCell>
+        </object>
+        <object id="cs_rules" label="&lt;b&gt;ЧС · правила по порядку&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;1. Запрет доступа из РФ → выход вне РФ&lt;br&gt;2. Блокировка / замедление РКН → прокси&lt;br&gt;3. Остальные → DIRECT&lt;/span&gt;" tooltip="1. Запрет доступа из РФ → выход вне РФ&lt;br&gt;2. Блокировка / замедление РКН → прокси&lt;br&gt;3. Остальные → DIRECT&lt;br&gt;Списки запрета доступа из России, блокировок РКН и замедлений РКН ведутся отдельно. При пересечении действует требование выхода вне РФ. Прокси проверяется по профилю назначения.">
+          <mxCell style="rounded=1;arcSize=12;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;fontFamily=Inter;fontSize=15;fontColor=#15263F;strokeWidth=1.35;fillColor=#EAF2FF;strokeColor=#6790C2;" vertex="1" parent="1">
+            <mxGeometry x="712.0" y="564.0" width="282" height="112" as="geometry" />
           </mxCell>
         </object>
         <object id="out_kind" label="&lt;b&gt;→ 03 · Тип цели маршрута&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:12px;color:#40556E&quot;&gt;Проверки и автовыбор&lt;/span&gt;" tooltip="Проверки и автовыбор&lt;br&gt;Продолжение в Orrdroid-03-probes-selection.drawio. Блок «Тип цели маршрута?».">
@@ -144,24 +159,20 @@
         <mxCell id="edge28" value="" source="compat" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="0" />
         </mxCell>
-        <mxCell id="edge29" value="" source="managed" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.67786;exitY=1.00000;exitPerimeter=0;entryX=1.00000;entryY=0.50000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="0">
-            <Array as="points">
-              <mxPoint x="555.33" y="468.0" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="edge29" value="" source="managed" target="mode_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="0" />
         </mxCell>
-        <mxCell id="edge30" value="" source="compile" target="scope" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
+        <mxCell id="edge30" value="" source="compile" target="scope" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.32214;exitY=1.00000;exitPerimeter=0;entryX=0.33068;entryY=0.16932;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="0" />
         </mxCell>
         <mxCell id="edge31" value="Базовый" source="scope" target="global" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="-0.48" />
         </mxCell>
-        <mxCell id="edge32" value="Расширенный" source="scope" target="pergroup" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=1.00000;exitY=0.50000;exitPerimeter=0;entryX=0.32214;entryY=0.00000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="-0.4905">
-            <mxPoint x="0" y="-14" as="offset" />
+        <mxCell id="edge32" value="Расширенный" source="scope" target="pergroup" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=1.00000;exitY=0.50000;exitPerimeter=0;entryX=0.00000;entryY=0.50000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.1377">
             <Array as="points">
-              <mxPoint x="470.67" y="620.0" />
+              <mxPoint x="335.0" y="620.0" />
+              <mxPoint x="335.0" y="772.0" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -175,8 +186,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="edge35" value="Есть proxy / Tailnet" source="bindings" target="out_kind" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.33068;exitY=0.83068;exitPerimeter=0;entryX=0.32214;entryY=0.00000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="-0.24" />
+        <mxCell id="edge35" value="Есть proxy / Tailnet" source="bindings" target="out_kind" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.48" />
         </mxCell>
         <mxCell id="edge36" value="Только direct / block" source="bindings" target="out_transaction" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.70192;exitY=0.79808;exitPerimeter=0;entryX=0.67786;entryY=0.00000;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="-0.2728">
@@ -255,13 +266,13 @@
         <mxCell id="edge49" value="Да" source="bound" target="forward" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="-0.48" />
         </mxCell>
-        <mxCell id="edge50" value="Нет: разрешённый fallback" source="bound" target="out_kind" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.45000;exitY=0.05000;exitPerimeter=0;entryX=0.67786;entryY=0.00000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="-0.4715">
-            <mxPoint x="0" y="-14" as="offset" />
+        <mxCell id="edge50" value="Нет: разрешённый fallback" source="bound" target="out_kind" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.45000;exitY=0.95000;exitPerimeter=0;entryX=0.50000;entryY=1.00000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.4783">
+            <mxPoint x="0" y="14" as="offset" />
             <Array as="points">
-              <mxPoint x="1059.88" y="1029.2" />
-              <mxPoint x="1059.88" y="1023.0" />
-              <mxPoint x="215.33" y="1023.0" />
+              <mxPoint x="1059.91" y="1122.8" />
+              <mxPoint x="1059.91" y="1131.0" />
+              <mxPoint x="173.0" y="1131.0" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -272,6 +283,45 @@
         </mxCell>
         <mxCell id="edge52" value="Состояние direct" source="direct" target="out_monitor" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="-0.48" />
+        </mxCell>
+        <mxCell id="edge_mode_1" value="БС" source="mode_rules" target="bs_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.4" />
+        </mxCell>
+        <mxCell id="edge_mode_2" value="ЧС" source="mode_rules" target="cs_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.55000;exitY=0.95000;exitPerimeter=0;entryX=0.05000;entryY=0.00000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.4785">
+            <mxPoint x="0" y="28" as="offset" />
+            <Array as="points">
+              <mxPoint x="646.12" y="514.8" />
+              <mxPoint x="646.12" y="522.0" />
+              <mxPoint x="711.33" y="522.0" />
+              <mxPoint x="711.33" y="555.73" />
+              <mxPoint x="726.1" y="555.73" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_mode_3" value="UNKNOWN" source="mode_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.15385;exitY=0.34615;exitPerimeter=0;entryX=1.00000;entryY=0.30000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="0.0">
+            <mxPoint x="0" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_mode_4" value="" source="bs_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.05000;exitY=0.00000;exitPerimeter=0;entryX=1.00000;entryY=0.70000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="0">
+            <Array as="points">
+              <mxPoint x="386.1" y="555.98" />
+              <mxPoint x="372.0" y="555.98" />
+              <mxPoint x="372.0" y="484.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_mode_5" value="" source="cs_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.05000;exitY=0.00000;exitPerimeter=0;entryX=0.67786;entryY=1.00000;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="0">
+            <Array as="points">
+              <mxPoint x="726.1" y="555.94" />
+              <mxPoint x="718.67" y="555.94" />
+              <mxPoint x="718.67" y="542.0" />
+              <mxPoint x="215.33" y="542.0" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="legend" value="Ромб — условие · фиолетовый блок → другая схема · пунктир — возврат или переход между схемами" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Inter;fontColor=#15263F;fontSize=13;fontColor=#536479;" vertex="1" parent="1">
           <mxGeometry x="48" y="1320.0" width="1610.0" height="30" as="geometry" />
