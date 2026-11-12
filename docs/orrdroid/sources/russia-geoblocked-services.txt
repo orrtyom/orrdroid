@@ -1,0 +1,409 @@
+САЙТЫ И СЕРВИСЫ, ОГРАНИЧИВАЮЩИЕ ДОСТУП ИЗ РОССИИ
+Источники сверены 12 ноября 2026 года. Формат UTF-8.
+
+В список входят решения самих сервисов и наблюдения за геоблокировкой
+с их стороны. Для каждого подтверждённого случая указано, что именно
+ограничено. У части компаний известна только политика доступности
+по странам. Самостоятельных замеров из российских сетей не проводилось.
+Единого полного реестра таких ограничений нет.
+
+1. КОМПАНИИ ПРЯМО УПОМИНАЮТ IP-АДРЕСА
+
+- Miro | https://miro.com/
+  IP-геоблокировка для России и Беларуси. Затрагивает сайт, вход,
+  регистрацию и обращение в поддержку.
+  https://help.miro.com/hc/en-us/articles/39679436929810-Miro-Support-Policy-FAQs
+
+- ElevenLabs | https://elevenlabs.io/ | https://api.elevenlabs.io/
+  Доступ к платформе из России ограничен. Компания предупреждает, что
+  правило может затрагивать IP серверов, которые провайдер относит к России.
+  https://elevenlabs.io/docs/help-center/legal/do-you-restrict-access-to-the-service-and-platform-for-any-specific-countries
+
+- Trello | https://trello.com/
+  Из России ограничено создание новых аккаунтов. Atlassian называет
+  местоположение и IP-адрес возможными причинами отказа.
+  https://support.atlassian.com/trello/docs/sanctioned-countries/
+
+2. ДОКУМЕНТИРОВАННЫЕ ОГРАНИЧЕНИЯ НА ДОСТУП К СЕРВИСУ
+
+- Airtable | https://airtable.com/
+  С 19 февраля 2026 года недоступен пользователям в России или связанным
+  с Россией. Некоторые рабочие пространства остаются доступны соавторам.
+  https://support.airtable.com/articles/1961515407-regional-access-restrictions
+
+- Canva | https://www.canva.com/
+  Компания объявила о блокировке доступа к Canva из России в 2022 году.
+  https://www.canva.com/newsroom/news/exiting-russia/
+
+- ChatGPT | https://chatgpt.com/
+  Россия отсутствует в списке стран, откуда поддерживается доступ.
+  https://help.openai.com/ru-ru/articles/7947663-chatgpt-supported-countries
+
+- OpenAI API | https://api.openai.com/ | https://platform.openai.com/
+  Россия отсутствует в списке поддерживаемых стран API.
+  https://help.openai.com/en/articles/5347006-which-countries-and-territories-are-supported-by-openai
+
+- Claude, Claude Code и Anthropic API | https://claude.ai/ | https://api.anthropic.com/
+  Использование из неподдерживаемых регионов ограничено. России в перечне нет.
+  https://www.anthropic.com/legal/supported-regions
+
+- Coda | https://coda.io/
+  По сообщению представителя Coda, доступ к платформе из России
+  и Беларуси прекращён с 12 сентября 2024 года.
+  https://rb.ru/news/coda-rf/
+
+- Gemini, веб-приложение | https://gemini.google.com/
+  Россия отсутствует в опубликованном списке доступности веб-приложения.
+  https://support.google.com/gemini/answer/13575153
+
+- Google AI Studio и Gemini API | https://aistudio.google.com/ | https://generativelanguage.googleapis.com/
+  Россия отсутствует в списке регионов для AI Studio и API.
+  https://ai.google.dev/gemini-api/docs/available-regions
+
+- Grammarly | https://www.grammarly.com/ | https://app.grammarly.com/
+  Компания прямо указывает, что запрещает доступ к своим сервисам из России.
+  https://support.grammarly.com/hc/en-us/articles/8788696353549-How-does-Grammarly-ensure-security-amid-the-ongoing-war-on-Ukraine
+
+- JetBrains AI | https://api.jetbrains.ai/
+  Для AI Assistant и связанных функций действует список разрешённых
+  территорий. России в нём нет. Речь идёт о сервисе JetBrains AI.
+  https://www.jetbrains.com/legal/docs/terms/jetbrains-ai/service-territory/
+  https://youtrack.jetbrains.com/articles/SUPPORT-A-558/AI-Assistant-is-not-available-and-asks-to-change-Region-setting
+
+- Netflix | https://www.netflix.com/
+  Россия указана среди стран, где стриминг недоступен.
+  https://help.netflix.com/ru/node/14164
+
+- Notion | https://www.notion.com/ | https://www.notion.so/
+  В сентябре 2024 года Notion объявил об отключении доступа для пользователей
+  в России. Для пространств с российскими платёжными данными действуют
+  дополнительные ограничения.
+  https://www.kommersant.ru/doc/6919001
+  https://therecord.media/notion-app-leaving-russia-us-sanctions
+
+- Spotify | https://www.spotify.com/ | https://open.spotify.com/
+  Компания объявила о полной приостановке сервиса в России с 11 апреля 2022 года.
+  https://newsroom.spotify.com/2022-03-02/spotifys-statement-in-response-to-the-war-in-ukraine/
+
+- Strava | https://www.strava.com/
+  Компания объявила о приостановке работы в России. Справка относит Россию
+  к странам, где сервис может быть ограничен частично или полностью.
+  https://www.strava.com/support-ukraine
+  https://support.strava.com/en-us/articles/15401978-is-strava-available-in-my-country
+
+- Disney+ | https://www.disneyplus.com/
+  Россия не входит в опубликованный список регионов вещания. Disney+
+  описывает ошибку 73 при доступе из неподдерживаемой страны.
+  https://help.disneyplus.com/in/article/disneyplus-location-availability
+  https://help.disneyplus.com/en-GB/article/disneyplus-en-ma-error-73
+
+3. ОГРАНИЧЕНИЯ НА АККАУНТЫ И ОТДЕЛЬНЫЕ ФУНКЦИИ
+
+- Airbnb | https://www.airbnb.com/
+  Пользователи, находящиеся в России, не могут оформлять новые бронирования.
+  Бронирования объектов в России тоже приостановлены.
+  https://www.airbnb.com/help/article/3211
+
+- Ecwid | https://www.ecwid.com/ | https://my.ecwid.com/
+  Сервис прекратил обслуживание российских аккаунтов с 9 сентября 2024 года.
+  https://support.ecwid.com/hc/ru/articles/15492094650268
+
+- Framer | https://www.framer.com/
+  Россия указана среди регионов, где возможны ограничения на регистрацию,
+  доступ к сайтам Framer и обработку платежей.
+  https://www.framer.com/help/articles/restricted-countries/
+
+- Upwork | https://www.upwork.com/
+  Приостановлена работа с аккаунтами пользователей, находящихся в России.
+  При переезде в поддерживаемую страну доступ можно запросить через апелляцию.
+  https://support.upwork.com/hc/en-us/articles/5691956088339-Suspended-operations-in-Russia-and-Belarus
+
+- Wise | https://wise.com/
+  Россия входит в список стран, где Wise не обслуживает пользователей.
+  Ограничения затрагивают регистрацию, вход и переводы из таких стран.
+  https://wise.com/help/articles/2978049/where-can-i-use-wise
+
+- Wix | https://www.wix.com/
+  С 12 сентября 2024 года Wix ограничивает доступ к аккаунтам и сервисам
+  для российских резидентов.
+  https://support.wix.com/en/article/about-wixcom-services-operations-in-russia
+
+- Cursor | https://cursor.com/
+  Часть моделей имеет ограничения по стране, зависящие от поставщика.
+  Справка описывает ограничения отдельных моделей.
+  https://prod.cursor.com/help/security-and-privacy/regions
+
+- GitLab.com | https://gitlab.com/
+  Российские номера не поддерживаются при проверке личности по телефону.
+  https://docs.gitlab.com/security/identity_verification/
+
+- Udemy | https://www.udemy.com/
+  В заявлении компании указаны ограничения платных операций и сохранение
+  доступа к бесплатным курсам для пользователей из России.
+  https://community.udemy.com/en/discussion/97958/udemy-s-response-to-the-conflict-in-ukraine
+
+- Supercell, в том числе Brawl Stars | https://supercell.com/
+  В заявлении 2022 года компания сообщила об удалении игр из магазинов
+  приложений и отключении доступа к играм после обновления клиента.
+  https://supercell.com/en/games/brawlstars/ru/blog/news/%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-supercell/
+
+4. БОЛЕЕ РАННИЕ ПУБЛИКАЦИИ И ЗАМЕРЫ
+
+Эти записи описывают доступность на дату публикации.
+
+- HashiCorp Releases | https://releases.hashicorp.com/
+  В 2022 году пользователи сообщали об отказе в загрузке релизов
+  из России. Сотрудник HashiCorp подтвердил решение ограничить доступность
+  продуктов и услуг в России и Беларуси.
+  https://discuss.hashicorp.com/t/access-to-releases-hashicorp-com-is-denied/36348
+
+- Crunchyroll | https://www.crunchyroll.com/
+  В марте 2022 года сообщалось, что Sony закрыла доступ российским
+  пользователям к стримингу Crunchyroll.
+  https://www.engadget.com/sony-crunchyroll-halts-service-russia-200333382.html
+
+- Monotype Fonts и MyFonts | https://www.monotypefonts.com/ | https://www.myfonts.com/
+  В апреле 2022 года сообщалось о закрытии каталога для пользователей из России.
+  https://www.vedomosti.ru/technology/articles/2022/04/13/918008-times-new-roman-zablokirovali
+  https://habr.com/ru/news/660849/
+
+- The Weather Channel | https://weather.com/
+  В июле 2023 года «Коммерсантъ» сообщал о недоступности сайта из России.
+  https://www.kommersant.ru/doc/6112221
+
+- Newspapers.com | https://www.newspapers.com/
+  В июле 2023 года «Коммерсантъ» сообщал о недоступности архива из России.
+  https://www.kommersant.ru/doc/6112221
+
+- Dell | https://www.dell.com/
+  В июле 2023 года сообщалось об ограничении доступа к ресурсам Dell.
+  https://www.kommersant.ru/doc/6112221
+
+- Qualcomm | https://www.qualcomm.com/
+  В июле 2023 года сообщалось об ограничении доступа к ресурсам Qualcomm.
+  https://www.kommersant.ru/doc/6112221
+
+- Intel | https://www.intel.com/
+  В июле 2023 года сообщалось об ограничении доступа к ресурсам Intel.
+  Для отдельных страниц и файлов доступность менялась.
+  https://www.kommersant.ru/doc/6112221
+
+- HP, Lenovo и Crucial | https://support.hp.com/ | https://support.lenovo.com/ | https://www.crucial.com/
+  В июле 2023 года сообщалось об ограничениях в утилитах обновления
+  драйверов и прошивок этих производителей.
+  https://www.kommersant.ru/doc/6112221
+
+- Microsoft Windows, загрузка ISO | https://www.microsoft.com/ru-ru/software-download/windows11
+  На Microsoft Q&A в марте 2026 года описан отказ при загрузке ISO
+  и инструментов с российских IP. Сообщение на форуме.
+  https://learn.microsoft.com/ru-ru/answers/questions/5814912/windows-11
+
+- Tailscale, загрузка пакетов | https://pkgs.tailscale.com/
+  Пользователи сообщали о региональных отказах при скачивании пакетов
+  и проблемах с подключением в 2023–2024 годах.
+  https://www.reddit.com/r/Tailscale/comments/18pvd9s/
+  https://www.reddit.com/r/Tailscale/comments/1fu0iwk/
+
+- Google BigQuery | https://console.cloud.google.com/bigquery
+  В 2024 году сообщалось о прекращении работы BigQuery в России
+  с 9 сентября. Сведения относятся к BigQuery.
+  https://www.kommersant.ru/doc/6892302
+
+- Docker Hub | https://hub.docker.com/ | https://registry-1.docker.io/
+  Весной 2024 года пользователи сообщали об ошибке 403 из России.
+  В июне 2024 года «Коммерсантъ» сообщил о снятии геоблокировки.
+  https://forums.docker.com/t/docker-hub-is-not-accessible-from-russia/141678
+  https://www.kommersant.ru/doc/6744910
+
+5. СПРАВОЧНЫЙ СПИСОК ДОМЕНОВ ДЛЯ ДОПОЛНИТЕЛЬНОЙ ПРОВЕРКИ
+
+Ниже приведена выборка из публичного списка GeoBlock проекта allow-domains.
+Для них требуется проверка с российских IP и сравнение с доступом
+из другой страны. В подборке встречаются адреса приложений, API и CDN.
+Наличие адреса в списке само по себе не подтверждает полную блокировку.
+
+Полный обновляемый список:
+https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/geoblock.lst
+Описание проекта:
+https://github.com/itdoginfo/allow-domains
+Другие публичные подборки доменов:
+https://github.com/jutsu-dev/ru-route-lists/releases/tag/latest
+https://github.com/Noktomezo/RussiaFancyLists/blob/main/README.ru.md
+
+Адреса для проверки (175)
+
+https://abercrombie.com/
+https://adidas.com/
+https://adobe.com/
+https://adobe.io/
+https://adobe.net/
+https://affinity.studio/
+https://ai.com/
+https://aircanada.com/
+https://akc.org/
+https://all3dp.com/
+https://alphacoders.com/
+https://alza.hu/
+https://amazfitwatchfaces.com/
+https://amplitude.com/
+https://analog.com/
+https://andrevi.ch/
+https://ansys.com/
+https://arc.net/
+https://arduino.cc/
+https://atlassian.com/
+https://att.com/
+https://augmentcode.com/
+https://bell-sw.com/
+https://bestbuy.com/
+https://bitdefender.com/
+https://bitnami.com/
+https://blinkshot.io/
+https://bosch.com/
+https://boschaftermarket.com/
+https://boschautoparts.com/
+https://brawlstarsgame.com/
+https://broadcom.com/
+https://broncosportforum.com/
+https://btod.com/
+https://buanzo.org/
+https://buf.build/
+https://buymeacoffee.com/
+https://capacitorjs.com/
+https://carrefouruae.com/
+https://cats.com/
+https://cdromance.org/
+https://cdw.com/
+https://chainreactioncycles.com/
+https://chaos.com/
+https://chat.com/
+https://cisco.com/
+https://cisecurity.org/
+https://citrix.com/
+https://clamav.net/
+https://clashofclans.com/
+https://clashroyaleapp.com/
+https://claude.com/
+https://clevelandclinic.org/
+https://clickup.com/
+https://codeium.com/
+https://coingate.com/
+https://contabo.com/
+https://corsair.com/
+https://cpu-monkey.com/
+https://credly.com/
+https://cursor.sh/
+https://cursorapi.com/
+https://cvedetails.com/
+https://daemon-tools.cc/
+https://deepl.com/
+https://deezer.com/
+https://devexpress.com/
+https://diabrowser.com/
+https://digitalcontent.sky/
+https://disctech.com/
+https://document360.com/
+https://document360.io/
+https://ducati.com/
+https://dyson.com/
+https://easydmarc.com/
+https://editorx.com/
+https://eneba.com/
+https://etsy.com/
+https://expandrive.com/
+https://extremetech.com/
+https://f1.com/
+https://filebin.net/
+https://fivetran.com/
+https://flir.com/
+https://flir.eu/
+https://flourish.studio/
+https://fluke.com/
+https://flukenetworks.com/
+https://flyertalk.com/
+https://force-user-content.com/
+https://force.com/
+https://formula1.com/
+https://framer.app/
+https://framercanvas.com/
+https://freeimages.com/
+https://fxnetworks.com/
+https://g2a.com/
+https://gamestop.com/
+https://genspark.ai/
+https://getoutline.com/
+https://gfn.am/
+https://glpals.com/
+https://gofund.me/
+https://gofundme.com/
+https://gonift.com/
+https://gpsonextra.net/
+https://gpu-monkey.com/
+https://grafana.com/
+https://graylog.org/
+https://grizzlysms.com/
+https://groq.com/
+https://groupon.com/
+https://guilded.gg/
+https://haydaygame.com/
+https://hbomax.com/
+https://hc-ping.com/
+https://hchk.io/
+https://healthline.com/
+https://hollisterco.com/
+https://home-connect.com/
+https://hostinger.com/
+https://hotels.com/
+https://housebrand.com/
+https://htmhell.dev/
+https://httptoolkit.com/
+https://hume.ai/
+https://hybrid-analysis.com/
+https://ibm.com/
+https://iedb.org/
+https://iherb.com/
+https://ikea.com/
+https://imgur.com/
+https://indeed.com/
+https://intel.de/
+https://intel.nl/
+https://intuit.com/
+https://intuitibits.com/
+https://itninja.com/
+https://jamf.com/
+https://jetbrains.space/
+https://jetbrains.team/
+https://joesandbox.com/
+https://kaleido.ai/
+https://keysight.com/
+https://klarna.com/
+https://kmail-lists.com/
+https://lambdalabs.com/
+https://langdock.com/
+https://last.fm/
+https://ldoceonline.com/
+https://legalshield.com/
+https://lgeapi.com/
+https://lgthinq.com/
+https://lidarr.audio/
+https://lifehacker.com/
+https://lightning.ai/
+https://lyst.com/
+https://mailerlite.com/
+https://mailinator.com/
+https://manus.im/
+https://manybooks.net/
+https://marvelsnap.com/
+https://mattermost.com/
+https://max.com/
+https://medicalnewstoday.com/
+https://meetup.com/
+https://metopera.org/
+https://middlewareinventory.com/
+https://mintmobile.com/
+https://mixcloud.com/
+https://mongodb.com/
+https://monoprice.com/
+https://mouser.com/
+https://mouser.fi/
+https://mssg.me/
