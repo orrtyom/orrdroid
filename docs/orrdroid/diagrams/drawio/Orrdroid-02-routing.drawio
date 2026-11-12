@@ -284,22 +284,21 @@
         <mxCell id="edge52" value="Состояние direct" source="direct" target="out_monitor" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#76559B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;dashed=1;dashPattern=5 4;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="-0.48" />
         </mxCell>
-        <mxCell id="edge_mode_1" value="БС" source="mode_rules" target="bs_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.50000;exitY=1.00000;exitPerimeter=0;entryX=0.50000;entryY=0.00000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="-0.4" />
+        <mxCell id="edge_mode_1" value="БС" source="mode_rules" target="bs_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.5;exitY=1;exitPerimeter=0;entryX=0.5;entryY=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.4">
+            <mxPoint x="-26" y="0" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="edge_mode_2" value="ЧС" source="mode_rules" target="cs_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.55000;exitY=0.95000;exitPerimeter=0;entryX=0.05000;entryY=0.00000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="-0.4785">
-            <mxPoint x="0" y="28" as="offset" />
+        <mxCell id="edge_mode_2" value="ЧС" source="mode_rules" target="cs_rules" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=1;exitY=0.5;exitPerimeter=0;entryX=0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.8260000000000001">
+            <mxPoint x="0" y="-14" as="offset" />
             <Array as="points">
-              <mxPoint x="646.12" y="514.8" />
-              <mxPoint x="646.12" y="522.0" />
-              <mxPoint x="711.33" y="522.0" />
-              <mxPoint x="711.33" y="555.73" />
-              <mxPoint x="726.1" y="555.73" />
+              <mxPoint x="680" y="468" />
+              <mxPoint x="680" y="620" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="edge_mode_3" value="UNKNOWN" source="mode_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.15385;exitY=0.34615;exitPerimeter=0;entryX=1.00000;entryY=0.30000;entryPerimeter=0;">
+        <mxCell id="edge_mode_3" value="UNKNOWN" source="mode_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0;exitY=0.5;exitPerimeter=0;entryX=1;entryY=0.5;entryPerimeter=0;">
           <mxGeometry relative="1" as="geometry" x="0.0">
             <mxPoint x="0" y="-14" as="offset" />
           </mxGeometry>
@@ -313,13 +312,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="edge_mode_5" value="" source="cs_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.05000;exitY=0.00000;exitPerimeter=0;entryX=0.67786;entryY=1.00000;entryPerimeter=0;">
-          <mxGeometry relative="1" as="geometry" x="0">
+        <mxCell id="edge_mode_5" value="" source="cs_rules" target="compile" edge="1" parent="1" style="edgeStyle=segmentEdgeStyle;rounded=1;arcSize=10;html=1;endArrow=block;endFill=1;endSize=7;strokeWidth=1.5;strokeColor=#4A627B;fontColor=#304458;fontFamily=Inter;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=page;jettySize=auto;jumpStyle=arc;jumpSize=6;exitX=0.5;exitY=0;exitPerimeter=0;entryX=1;entryY=0.8875;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="726.1" y="555.94" />
-              <mxPoint x="718.67" y="555.94" />
-              <mxPoint x="718.67" y="542.0" />
-              <mxPoint x="215.33" y="542.0" />
+              <mxPoint x="853" y="546" />
+              <mxPoint x="346" y="546" />
+              <mxPoint x="346" y="499" />
             </Array>
           </mxGeometry>
         </mxCell>
